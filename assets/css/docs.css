@@ -1,0 +1,294 @@
+/*
+File:			docs.css
+Description:	Custom styles for MangoRate
+Written By:     Sultan Mahmud
+*/
+
+
+/*------------------------------------------------------------
+
+Typography
+
+------------------------------------------------------------*/
+
+height, body {
+	text-rendering: optimizelegibility;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
+
+.clear {
+	clear: both;
+}
+
+body {	
+	font-family: 'Droid Sans', sans-serif;
+	color: #777777;
+	margin: 0px!important;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+a:hover {
+	text-decoration: none;
+}
+
+.navbar {
+	margin-bottom: 0px;
+}
+.navbar-inner {
+	border-radius: 0px;
+	padding: 0px;
+}
+
+/* ============ Grid ============ */
+
+
+.top-left-bar {
+
+}
+
+.top-right {
+
+}
+
+.preview-bar {
+	text-align: center;
+	position: absolute; 
+	top: 42px; 
+	bottom: 156px;	
+}
+
+.wall-bar {
+	padding: 0px 8px;
+	position: absolute; 
+	top: 42px; 
+	bottom: 156px;
+	right: 0px;
+}
+
+.floor-bar {
+	padding: 0px 8px;
+	position: absolute; 
+	top: 42px; 
+	bottom: 156px;
+	right: 196px;
+}
+
+.room-bar {
+
+}
+
+.row-fluid .span4, .row-fluid .span8, .row-fluid .span12 {
+	margin: 0px;
+}
+
+.row-fluid .span4 {
+	width: 25%;
+}
+
+.row-fluid .span8 {
+	width: 75%;
+}
+
+.row-fluid .span12 {
+	width: 100%;
+}
+
+.img-polaroid {
+    padding: 4px 4px 20px 4px;
+}
+
+.nav {
+	text-align: center;
+}
+
+.serial {
+	font-size: 10px;
+	font-weight: bold;
+	padding: 0px;
+	margin-top: -25px;
+	margin-bottom: 5px;
+}
+
+.room-serial {
+	font-size: 10px;
+	font-weight: bold;
+	padding: 0px;
+	margin-top: -28px;
+	margin-bottom: 5px;
+}
+
+
+/* ============ Top Bar ============ */
+
+.navbar .nav-left {
+	float: left;
+}
+
+.navbar .nav-right {
+	float: right;
+}
+
+.logo {
+	height: 30px;
+	margin: -20px 0px;
+}
+
+.btn-floor {
+	margin: 0px;
+	width: 155px;
+	font-weight: bold;
+}
+
+.btn-wall {
+	margin: 0px;
+	width: 155px;
+	font-weight: bold;
+}
+
+.btn-floor-right {
+	margin-right:16px;
+}
+
+.btn-wall-right {
+	margin-right:-2px;
+}
+
+.navbar .top-logo {
+	border-right: none;
+	border-left: none;
+}
+
+.navbar .top {
+	border-right: none;
+	border-left: none;
+	width: 100%;
+	box-shadow: none;
+}
+
+.navbar .top-nav {
+	float: right;
+}
+
+.btn-group > .btn:first-child {
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.btn-group > .dropdown-toggle {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.dropdown-menu > li > a:hover {
+	background: gray;
+}
+
+.btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+    font-size: 13px;
+    border-radius: 0px;
+}
+
+.btn-group > .dropdown-menu, .btn-group > .popover {
+    min-width: 178px;
+}
+
+/* ============ Preview Body ============ */
+
+.preview-image {
+	max-height: 100%;
+}
+
+.loading-image {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+}
+
+/* ============ Floor Bar ============ */
+
+.nav-floor {
+	width: 180px;
+	height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;    
+    max-width: 180px;
+}
+
+.nav-floor .navbar-inner {
+	padding: 4px 0px;
+	height:150%;
+}
+
+.nav-floor-content {
+	height:150%;
+}
+
+.navbar .floor-thumb {
+	width: 136px;
+	cursor: pointer;
+	margin: 4px 8px;
+}
+
+.navbar .preview-floor {
+	border-top: none;
+	border-bottom: none;
+}
+
+
+/* ============ Wall Bar ============ */
+
+.nav-wall {
+	width: 180px;
+	height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;    
+    max-width: 180px;
+}
+
+.nav-wall .navbar-inner {
+	padding: 4px 0px;
+	height:150%;
+}
+
+.nav-wall-content {
+	height:150%;
+}
+
+.navbar .wall-thumb {
+	width: 136px;
+	height: 136px;
+	cursor: pointer;
+	margin: 4px 8px;
+}
+
+.navbar .preview-wall {
+	border-top: none;
+	border-bottom: none;
+}
+
+
+/* ============ Room Bar ============ */
+
+.nav-room {
+	height: 156px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 156px;
+}
+
+.nav-room-content {
+	width:150%;
+}
+
+.navbar .room-thumb {
+	width: 140px;
+	cursor: pointer;
+	margin: 8px 4px;
+}
