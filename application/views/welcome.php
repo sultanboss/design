@@ -117,7 +117,7 @@
             <div class="nav-collapse collapse nav-room-content">
               <ul class="nav">
                 <li>
-                  <img class="room-thumb img-polaroid" id="BED3" src="<?php echo $this->config->item('upload_url'); ?>Bed3.jpg">
+                  <img class="room-thumb img-polaroid" id="BED3" src="<?php echo $this->config->item('upload_url'); ?>BED3.jpg">
                   <div class="room-serial">BED3</div>
                 </li>
                 <li>
