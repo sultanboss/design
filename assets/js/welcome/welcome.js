@@ -1,5 +1,5 @@
 
-$(document).ready(function() {
+$(window).load(function() {
 
     var roomType = 'bed';
     var room = 'BED3';
