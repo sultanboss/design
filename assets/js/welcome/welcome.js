@@ -45,9 +45,7 @@ $(window).load(function() {
             $('.nav-floor ul li').hide();
             $('.nav-wall ul li.' + room).show();
             $('.nav-floor ul li.' + room).show();
-
-            select(room, wall, floor);   
-            $('.loading').hide();        
+            select(room, wall, floor);        
         }
     });
 
@@ -65,8 +63,7 @@ $(window).load(function() {
             }  
             
             $('.preview-image').attr('src', img);
-            select(room, wall, floor);   
-            $('.loading').hide();      
+            select(room, wall, floor);    
         }
     });
 
@@ -85,7 +82,6 @@ $(window).load(function() {
             
             $('.preview-image').attr('src', img);
             select(room, wall, floor);
-            $('.loading').hide();
         }
     });
 
@@ -115,7 +111,6 @@ $(window).load(function() {
         
         $('.preview-image').attr('src', img);
         select(room, wall, floor);
-        $('.loading').hide();
     });
 
 
@@ -160,6 +155,10 @@ function select(room, wall, floor)
     $('#' + room).css('background', '#FEECE2');
     $('#' + wall).css('background', '#FEECE2');
     $('#' + floor).css('background', '#FEECE2');
+
+    $('.preview-image').load(function() {
+        $('.loading').hide();  
+    });
 }
 
 function numOfVisibleElement(element) 
