@@ -105,7 +105,7 @@ class UploadHandler
                 'tiles_thumb' => array(
                     'max_width' => 136,
                     'max_height' => 136,
-                    'jpeg_quality' => 95
+                    'jpeg_quality' => 100
                 ),
                 'rooms_thumb' => array(
                     // Uncomment the following to use a defined directory for the thumbnails
@@ -120,7 +120,7 @@ class UploadHandler
                     //'crop' => true,
                     'max_width' => 140,
                     'max_height' => 96,
-                    'jpeg_quality' => 95
+                    'jpeg_quality' => 100
                 )
             )
         );
