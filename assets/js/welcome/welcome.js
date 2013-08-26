@@ -38,7 +38,7 @@ $(document).ready(function() {
                 wall = 0;
                 img = 'uploads/files/' + room + '.jpg';
             } 
-            $('.loading').hide();
+            
             $('.preview-image').attr('src', img);
 
             $('.nav-wall ul li').hide();
@@ -46,7 +46,8 @@ $(document).ready(function() {
             $('.nav-wall ul li.' + room).show();
             $('.nav-floor ul li.' + room).show();
 
-            select(room, wall, floor);           
+            select(room, wall, floor);   
+            $('.loading').hide();        
         }
     });
 
@@ -62,9 +63,10 @@ $(document).ready(function() {
                 room = default_floor_img;
                 img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }  
-            $('.loading').hide();
+            
             $('.preview-image').attr('src', img);
-            select(room, wall, floor);         
+            select(room, wall, floor);   
+            $('.loading').hide();      
         }
     });
 
@@ -80,9 +82,10 @@ $(document).ready(function() {
                 room = default_wall_img;
                 img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }
-            $('.loading').hide();
+            
             $('.preview-image').attr('src', img);
             select(room, wall, floor);
+            $('.loading').hide();
         }
     });
 
@@ -109,9 +112,10 @@ $(document).ready(function() {
         $('.nav-floor ul li.' + room).show();   
 
         img = 'uploads/files/' + room + '.jpg';
-        $('.loading').hide();
+        
         $('.preview-image').attr('src', img);
         select(room, wall, floor);
+        $('.loading').hide();
     });
 
 
@@ -119,20 +123,21 @@ $(document).ready(function() {
         if(this.id != 'f-all')
         {
             $('.nav-floor ul li').hide();
-            $('.nav-floor ul li.' + roomType + '-' + this.id).show();
+            $('.nav-floor ul li.' + room + '-' + this.id).show();
         }
         else
-            $('.nav-floor ul li.' + roomType).show();
+            $('.nav-floor ul li.' + room).show();
+
     });
 
     $('.top-wall a').click(function() {
         if(this.id != 'w-all')
         {
             $('.nav-wall ul li').hide();
-            $('.nav-wall ul li.' + roomType + '-' + this.id).show();
+            $('.nav-wall ul li.' + room + '-' + this.id).show();
         }
         else
-            $('.nav-wall ul li.' + roomType).show();
+            $('.nav-wall ul li.' + room).show();
     });
 
 

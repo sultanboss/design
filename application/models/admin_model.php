@@ -95,6 +95,13 @@ class Admin_model extends CI_Model {
         return $query->result_array();
     }
 
+    function get_size_tiles($size)
+    {
+        $this->db->where("tiles_size", $size); 
+        $query = $this->db->get('main_tiles');
+        return $query->result_array();
+    }
+
     function get_tiles_category_count($category)
     {
         $this->db->select("count(tiles_size), tiles_size, tiles_type");

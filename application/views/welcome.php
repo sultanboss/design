@@ -80,7 +80,7 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$rm.'-'.substr($valuex['tiles'], 0,1).'-'.$walls_item['tiles_size'].' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-'.substr($valuex['tiles'], 0,1).'-'.$walls_item['tiles_size'].' ';
                      $i++;
                   };
                 ?>
@@ -107,7 +107,7 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)                
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$rm.'-'.substr($valuex['tiles'], 0,1).'-'.$walls_item['tiles_size'].' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-'.substr($valuex['tiles'], 0,1).'-'.$floors_item['tiles_size'].' ';
                      $i++;
                   };
                 ?>

@@ -67,14 +67,13 @@ class Welcome extends CI_Controller
 						$ar[$i]['tiles'] = 'wall floor';
 					}
 				}
-
 				$ar[$i]['room'] = substr($value, 0, strpos($value, '_'));
 				$i++;
 			}			
 		}
-
 		return $ar;
 	}
+
 }
 
 /* End of file welcome.php */
