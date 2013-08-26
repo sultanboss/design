@@ -21,7 +21,7 @@
 	}
 	?>	
 		<li>			
-			<a href="<?php echo base_url().'admin/rooms/edit/'.$rooms_item['room_id'];?>"><img src="<?php echo $this->config->item('upload_url').$rooms_item['room_code']; ?>.jpg"></a>
+			<a href="<?php echo base_url().'admin/rooms/edit/'.$rooms_item['room_id'];?>"><img src="<?php echo $this->config->item('upload_url').'rooms_thumb/'.$rooms_item['room_code']; ?>.jpg"></a>
 			<button class="btn btn-mini disabled" type="button"><?php echo $rooms_item['room_code']; ?></button>
 		</li>
 	<?php } ?>

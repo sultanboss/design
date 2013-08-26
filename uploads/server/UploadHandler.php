@@ -103,8 +103,8 @@ class UploadHandler
                 */
                 // Uncomment the following to create medium sized images:
                 'tiles_thumb' => array(
-                    'max_width' => 136,
-                    'max_height' => 136,
+                    'max_width' => 200,
+                    'max_height' => 200,
                     'jpeg_quality' => 100
                 ),
                 'rooms_thumb' => array(
@@ -118,8 +118,8 @@ class UploadHandler
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
                     //'crop' => true,
-                    'max_width' => 140,
-                    'max_height' => 96,
+                    'max_width' => 200,
+                    'max_height' => 160,
                     'jpeg_quality' => 100
                 )
             )

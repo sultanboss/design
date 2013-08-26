@@ -21,7 +21,7 @@
 	}
 	?>	
 		<li>			
-			<a href="<?php echo base_url().'admin/tiles/edit/'.$tiles_item['tiles_id'];?>"><img src="<?php echo $this->config->item('upload_url').$tiles_item['tiles_code']; ?>.jpg"></a>
+			<a href="<?php echo base_url().'admin/tiles/edit/'.$tiles_item['tiles_id'];?>"><img src="<?php echo $this->config->item('upload_url').'tiles_thumb/'.$tiles_item['tiles_code']; ?>.jpg"></a>
 			<button class="btn btn-mini disabled" type="button"><?php echo $tiles_item['tiles_code']; ?></button>
 		</li>
 	<?php } ?>
