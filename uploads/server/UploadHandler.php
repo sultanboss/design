@@ -1,4 +1,5 @@
 <?php
+
 /*
  * jQuery File Upload Plugin PHP Class 6.8.1
  * https://github.com/blueimp/jQuery-File-Upload
@@ -101,14 +102,12 @@ class UploadHandler
                 ),
                 */
                 // Uncomment the following to create medium sized images:
-                /*
-                'medium' => array(
-                    'max_width' => 800,
-                    'max_height' => 600,
-                    'jpeg_quality' => 80
+                'tiles_thumb' => array(
+                    'max_width' => 136,
+                    'max_height' => 136,
+                    'jpeg_quality' => 95
                 ),
-                */
-                'thumbnail' => array(
+                'rooms_thumb' => array(
                     // Uncomment the following to use a defined directory for the thumbnails
                     // instead of a subdirectory based on the version identifier.
                     // Make sure that this directory doesn't allow execution of files if you
@@ -119,8 +118,9 @@ class UploadHandler
                     // Uncomment the following to force the max
                     // dimensions and e.g. create square thumbnails:
                     //'crop' => true,
-                    'max_width' => 80,
-                    'max_height' => 80
+                    'max_width' => 140,
+                    'max_height' => 96,
+                    'jpeg_quality' => 95
                 )
             )
         );
@@ -528,14 +528,8 @@ class UploadHandler
         return $name;
     }
 
-    protected function get_file_name($name,
-            $type = null, $index = null, $content_range = null) {
-        return $this->get_unique_filename(
-            $this->trim_file_name($name, $type, $index, $content_range),
-            $type,
-            $index,
-            $content_range
-        );
+    protected function get_file_name($name, $type, $index, $content_range) {
+        return $name;
     }
 
     protected function handle_form_data($file, $index) {

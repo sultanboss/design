@@ -30,7 +30,7 @@ class Auth extends CI_Controller
 	function login()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
-			redirect('');
+			redirect('/admin/');
 
 		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
 			redirect('/auth/send_again/');
@@ -68,7 +68,7 @@ class Auth extends CI_Controller
 						$this->form_validation->set_value('remember'),
 						$data['login_by_username'],
 						$data['login_by_email'])) {								// success
-					redirect('');
+					redirect('/admin/');
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -92,7 +92,17 @@ class Auth extends CI_Controller
 					$data['captcha_html'] = $this->_create_captcha();
 				}
 			}
+
+			$data['title'] = 'Please Login to Continue';
+
+			$data['logged_in'] = 0;
+			if ($this->tank_auth->is_logged_in()) {	
+				$data['logged_in'] == 1;
+			}
+			$this->load->view('common/header', $data);
+			$this->load->view('common/header_admin', $data);
 			$this->load->view('auth/login_form', $data);
+			$this->load->view('common/footer_admin', $data);			
 		}
 	}
 
@@ -115,8 +125,8 @@ class Auth extends CI_Controller
 	 */
 	function register()
 	{
-		if ($this->tank_auth->is_logged_in()) {									// logged in
-			redirect('');
+		if (!$this->tank_auth->is_logged_in()) {									// logged in
+			redirect('/auth/login/');
 
 		} elseif ($this->tank_auth->is_logged_in(FALSE)) {						// logged in, not activated
 			redirect('/auth/send_again/');
@@ -135,8 +145,8 @@ class Auth extends CI_Controller
 			$this->form_validation->set_rules('email', $this->lang->line('auth_email'), 'trim|required|xss_clean|valid_email');
 			$this->form_validation->set_rules('password', $this->lang->line('auth_password'), 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length', 'tank_auth').']|max_length['.$this->config->item('password_max_length', 'tank_auth').']|alpha_dash');
 			//$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'trim|required|xss_clean|matches[password]');
-			$this->form_validation->set_rules('zip', $this->lang->line('auth_zip'), 'trim|required|xss_clean');
-			$this->form_validation->set_rules('birthday', $this->lang->line('auth_birthday'), 'trim|required|xss_clean');
+			//$this->form_validation->set_rules('zip', $this->lang->line('auth_zip'), 'trim|required|xss_clean');
+			//$this->form_validation->set_rules('birthday', $this->lang->line('auth_birthday'), 'trim|required|xss_clean');
 
 			$captcha_registration	= $this->config->item('captcha_registration', 'tank_auth');
 			$use_recaptcha			= $this->config->item('use_recaptcha', 'tank_auth');
@@ -158,8 +168,8 @@ class Auth extends CI_Controller
 						$this->form_validation->set_value('password'),
 						$this->form_validation->set_value('fname'),
 						$this->form_validation->set_value('lname'),
-						$this->form_validation->set_value('zip'),
-						$this->form_validation->set_value('birthday'),
+						//$this->form_validation->set_value('zip'),
+						//$this->form_validation->set_value('birthday'),
 						$email_activation))) {									// success
 
 					$data['site_name'] = $this->config->item('website_name', 'tank_auth');
@@ -199,7 +209,17 @@ class Auth extends CI_Controller
 			$data['use_username'] = $use_username;
 			$data['captcha_registration'] = $captcha_registration;
 			$data['use_recaptcha'] = $use_recaptcha;
+
+			$data['title'] = 'Register a New User';
+
+			$data['logged_in'] = 0;
+			if ($this->tank_auth->is_logged_in()) {	
+				$data['logged_in'] == 1;
+			}
+			$this->load->view('common/header', $data);
+			$this->load->view('common/header_admin', $data);
 			$this->load->view('auth/register_form', $data);
+			$this->load->view('common/footer_admin', $data);				
 		}
 	}
 
@@ -294,7 +314,17 @@ class Auth extends CI_Controller
 					foreach ($errors as $k => $v)	$data['errors'][$k] = $this->lang->line($v);
 				}
 			}
+
+			$data['title'] = 'Forgot Password';
+
+			$data['logged_in'] = 0;
+			if ($this->tank_auth->is_logged_in()) {	
+				$data['logged_in'] == 1;
+			}
+			$this->load->view('common/header', $data);
+			$this->load->view('common/header_admin', $data);
 			$this->load->view('auth/forgot_password_form', $data);
+			$this->load->view('common/footer_admin', $data);			
 		}
 	}
 
@@ -472,7 +502,7 @@ class Auth extends CI_Controller
 	function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/auth/');
+		redirect('/auth/login/');
 	}
 
 	/**

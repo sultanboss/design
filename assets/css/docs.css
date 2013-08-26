@@ -27,11 +27,34 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 body {	
 	font-family: 'Droid Sans', sans-serif;
 	color: #777777;
-	margin: 0px!important;
+	margin: 0px !important;
+	background: #DFDFE0;
+}
+
+code {
+	color: #000 !important;
+	margin-left: 5px !important;
 }
 
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
+
+.loading {
+	position: absolute;		
+	opacity: 0.6;
+	z-index: 1080;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	display: none;
+}
+
+.image-loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	opacity: 1.0;
+}
 
 a:hover {
 	text-decoration: none;
@@ -45,6 +68,57 @@ a:hover {
 	padding: 0px;
 }
 
+.img-polaroid:hover {
+	background: #FEECE2;
+}
+
+/* ============ Input ============ */
+
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    font-size:14px;
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../img/check_radio_sheet.png) left top no-repeat;
+    cursor:pointer;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(../img/check_radio_sheet.png) -19px top no-repeat;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+input[type="radio"] + label {
+    font-size:14px;
+    color: #000;
+}
+
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    background:url(../img/check_radio_sheet.png) -38px top no-repeat;
+    cursor:pointer;
+}
+
+input[type="radio"]:checked + label span {
+    background:url(../img/check_radio_sheet.png) -57px top no-repeat;
+}
+
 /* ============ Grid ============ */
 
 
@@ -53,7 +127,9 @@ a:hover {
 }
 
 .top-right {
-
+	position: absolute;
+	width: 400px !important;
+	right: 0px;
 }
 
 .preview-bar {
@@ -80,7 +156,15 @@ a:hover {
 }
 
 .room-bar {
+	position: absolute;
+	bottom: 0px;
+}
 
+.room-bar-right {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 400px !important;
 }
 
 .row-fluid .span4, .row-fluid .span8, .row-fluid .span12 {
@@ -152,7 +236,7 @@ a:hover {
 }
 
 .btn-floor-right {
-	margin-right:16px;
+	margin-right:17px;
 }
 
 .btn-wall-right {
@@ -201,13 +285,12 @@ a:hover {
 /* ============ Preview Body ============ */
 
 .preview-image {
-	max-height: 100%;
-}
-
-.loading-image {
-	position: absolute;
-	top: 40%;
-	left: 50%;
+	padding: 4px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	height: 98.6%;
+	margin-top: -1px;
 }
 
 /* ============ Floor Bar ============ */
@@ -231,6 +314,7 @@ a:hover {
 
 .navbar .floor-thumb {
 	width: 136px;
+	height: 136px;
 	cursor: pointer;
 	margin: 4px 8px;
 }
@@ -277,7 +361,7 @@ a:hover {
 
 .nav-room {
 	height: 156px;
-    width: 100%;
+    width: auto;
     overflow-x: auto;
     overflow-y: hidden;
     max-height: 156px;
@@ -285,10 +369,214 @@ a:hover {
 
 .nav-room-content {
 	width:150%;
+	height: 156px;
+	border-right: 0px;
 }
 
 .navbar .room-thumb {
 	width: 140px;
+	height: 96px;
 	cursor: pointer;
 	margin: 8px 4px;
+}
+
+
+/* ============ Room Bar Right ============ */
+
+.nav-room-right {
+	height: 156px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 156px;
+}
+
+.nav-room-right-content {
+	height: 156px;
+	border-right: 0px;
+	border-left: 0px; 
+	padding: 15px;
+}
+
+.nav-room-right-content ul li {
+	width: 180px;
+	text-align: left;
+}
+
+
+/* ============ Admin ============ */
+
+.container-admin {
+	margin-top: 40px;
+	background: #fff;
+	padding: 10px;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+	min-height: 500px;
+}
+
+.admin-center {
+	margin: 0px 200px;
+	padding: 40px 0px;
+}
+
+.admin-left {
+	margin: 0px 20px;
+	padding: 40px 0px;
+}
+
+.credit {
+	margin: 10px 0px;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+}
+
+.top-button {
+	padding: 0px !important;
+}
+
+.nav-pills > li > a {
+	font-size: 13px;
+}
+
+.well {
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+.well-body {
+	margin: 0px -4px;
+}
+
+.well-body ul > li {
+	text-align: left;
+	float: left;
+	padding: 5px;
+	background-color: #fff;
+	border: 1px solid rgb(227, 227, 227);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+	margin: 10px 4px;
+	cursor: pointer;
+}
+
+.well-body ul > li:hover {
+	border: 1px solid #0088CC;
+}
+
+.well-body ul > li > button {
+	width: 138px;
+	border-radius: 0px 0px 2px 2px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.well-body ul > li > a > img {
+	width: 136px;
+	height: 136px;
+	border: 1px solid #E3E3E3;
+	border-bottom: none;
+}
+
+.title {
+	font-size: 15px;
+	padding: 0px;
+	margin: 25px 0px 0px 5px;
+}
+
+.add-body {
+	margin: 0px -4px;
+}
+
+.control-group .btn-group button:first-child {
+	border-radius: 4px 0px 0px 4px;
+	width: 195px;
+	text-align: left;
+}
+
+.control-group .btn-group button.dropdown-toggle {
+	border-radius: 0px 4px 4px 0px;
+}
+
+.control-group .btn-group .dropdown-menu {
+	width: 218px;
+}
+
+.control-group .radio-buttons button {
+	width: 110px !important;
+	text-align: center !important;
+}
+
+.control-group .input-prepend input {
+	width: 178px;
+}
+
+.control-group .progress {
+	width: 218px;
+}
+
+.control-group .progress-full {
+	width: 575px;
+}
+
+.control-group .add-photo .files p {
+	float: left;
+	padding: 0px 10px 0px 0px !important;
+}
+
+
+/* ============ Auth ============ */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.error {
+	color: red;
+	font-size: 13px;
+}
+
+.checkbox-box {
+	margin-top: -5px !important;
+	margin-bottom: 5px !important;
+}
+
+/* ============ Buttons ============ */
+
+.login-button {
+	margin-left: 25px;
+}
+
+.signup-button {
+	margin-left: 145px;
+}
+
+.logout-button {
+	margin-right: -10px;
+	margin-left: 15px;
+}
+
+.app-button {
+	margin-right: -10px;
+}
+
+.add-tiles-button {
+	margin-left: 120px;
+}
+
+.update-tiles-button {
+	margin-left: 95px;
+}
+
+.add-rooms-button {
+	margin-left: 110px;
+}
+
+.update-rooms-button {
+	margin-left: 85px;
 }

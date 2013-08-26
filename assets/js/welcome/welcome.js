@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+    var roomType = 'bed';
     var room = 'BED3';
     var floor = 0;
     var wall = 0;
@@ -9,31 +10,42 @@ $(document).ready(function() {
     var default_floor_img = 'BED3';
     var default_wall_img = 'BAT7';
 
+    $("input:radio[id=bed]:first").attr('checked', true);
+
+    $('.nav-room ul li').hide();
+    $('.nav-wall ul li').hide();
+    $('.nav-floor ul li').hide();
+    $('.nav-room ul li.bed').show();
+    $('.nav-wall ul li.bed').show();
+    $('.nav-floor ul li.bed').show();
+
     var loading = 'assets/img/image.gif';
     var image = 'uploads/files/' + default_room_img + '.jpg';
 
-    $('.preview-image').removeClass('loading-image');
     $('.preview-image').attr('src', image);
-    $('#' + default_room_img).css('border', '1px solid #EF602F');
+    $('.loading').hide();
+    $('#' + default_room_img).css('background', '#FEECE2');
 
     $('.nav-room li img').click(function() {
         if(room != $(this).attr('id'))
         {
-            $('.preview-image').attr('src', loading);
-            $('.preview-image').addClass('loading-image');
+            $('.loading').show();
             room = $(this).attr('id');
             var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';            
-            $('.preview-image').removeClass('loading-image');
-            if(url_exists(img))
-            {
-                $('.preview-image').attr('src', img);
-            }
-            else
+            if(!url_exists(img))
             {
                 floor = 0;
                 wall = 0;
-                $('.preview-image').attr('src', 'uploads/files/' + room + '.jpg');
+                img = 'uploads/files/' + room + '.jpg';
             } 
+            $('.loading').hide();
+            $('.preview-image').attr('src', img);
+
+            $('.nav-wall ul li').hide();
+            $('.nav-floor ul li').hide();
+            $('.nav-wall ul li.' + room).show();
+            $('.nav-floor ul li.' + room).show();
+
             select(room, wall, floor);           
         }
     });
@@ -41,21 +53,17 @@ $(document).ready(function() {
     $('.nav-floor li img').click(function() {
         if(floor != $(this).attr('id'))
         {
-            $('.preview-image').attr('src', loading);
-            $('.preview-image').addClass('loading-image');
+            $('.loading').show();
             floor = $(this).attr('id');
             var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
-            $('.preview-image').removeClass('loading-image');
-            if(url_exists(img))
-            {
-                $('.preview-image').attr('src', img);
-            }
-            else 
+            if(!url_exists(img))
             {
                 wall = 0;
                 room = default_floor_img;
-                $('.preview-image').attr('src', 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg');
+                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }  
+            $('.loading').hide();
+            $('.preview-image').attr('src', img);
             select(room, wall, floor);         
         }
     });
@@ -63,23 +71,68 @@ $(document).ready(function() {
     $('.nav-wall li img').click(function() {
         if(wall != $(this).attr('id'))
         {
-            $('.preview-image').attr('src', loading);
-            $('.preview-image').addClass('loading-image');
+            $('.loading').show();
             wall = $(this).attr('id');
             var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
-            $('.preview-image').removeClass('loading-image');
-            if(url_exists(img))
-            {
-                $('.preview-image').attr('src', img);
-            }
-            else 
+            if(!url_exists(img))
             {
                 floor = 0;
                 room = default_wall_img;
-                $('.preview-image').attr('src', 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg');
+                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }
+            $('.loading').hide();
+            $('.preview-image').attr('src', img);
             select(room, wall, floor);
         }
+    });
+
+
+    $('.room-type').change(function(){
+        $('.loading').show();
+
+        roomType = this.id;
+
+        floor = 0;
+        wall = 0;
+        room = 0;
+        if($('.nav-room ul li.' + this.id).attr('id'))
+        {
+            room = $('.nav-room ul li.' + this.id).attr('id');
+            room = room.substring(0, room.length-1);
+        }     
+
+        $('.nav-room ul li').hide();
+        $('.nav-wall ul li').hide();
+        $('.nav-floor ul li').hide();
+        $('.nav-room ul li.' + this.id).show();
+        $('.nav-wall ul li.' + room).show();
+        $('.nav-floor ul li.' + room).show();   
+
+        img = 'uploads/files/' + room + '.jpg';
+        $('.loading').hide();
+        $('.preview-image').attr('src', img);
+        select(room, wall, floor);
+    });
+
+
+    $('.top-floor a').click(function() {
+        if(this.id != 'f-all')
+        {
+            $('.nav-floor ul li').hide();
+            $('.nav-floor ul li.' + roomType + '-' + this.id).show();
+        }
+        else
+            $('.nav-floor ul li.' + roomType).show();
+    });
+
+    $('.top-wall a').click(function() {
+        if(this.id != 'w-all')
+        {
+            $('.nav-wall ul li').hide();
+            $('.nav-wall ul li.' + roomType + '-' + this.id).show();
+        }
+        else
+            $('.nav-wall ul li.' + roomType).show();
     });
 
 
@@ -93,12 +146,22 @@ function url_exists(url)
     return http.status!=404;
 }
 
-function select(room, wall, floor) {
-    $('.nav-room li img').css('border', '1px solid #ccc');
-    $('.nav-wall li img').css('border', '1px solid #ccc');
-    $('.nav-floor li img').css('border', '1px solid #ccc');
+function select(room, wall, floor) 
+{
+    $('.nav-room li img').css('background', '#FFFFFF');
+    $('.nav-wall li img').css('background', '#FFFFFF');
+    $('.nav-floor li img').css('background', '#FFFFFF');
 
-    $('#' + room).css('border', '1px solid #EF602F');
-    $('#' + wall).css('border', '1px solid #EF602F');
-    $('#' + floor).css('border', '1px solid #EF602F');
+    $('#' + room).css('background', '#FEECE2');
+    $('#' + wall).css('background', '#FEECE2');
+    $('#' + floor).css('background', '#FEECE2');
+}
+
+function numOfVisibleElement(element) 
+{
+    var numOfVisibleRows = $(element).filter(function() {
+          return $(this).css('display') !== 'none';
+    }).length;
+
+    return numOfVisibleRows;
 }

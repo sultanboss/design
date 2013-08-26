@@ -41,6 +41,12 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+$route['admin/tiles/add'] = "admin/add_tiles";
+$route['admin/tiles/edit/(:any)'] = "admin/edit_tiles/$1";
+
+$route['admin/rooms/add'] = "admin/add_rooms";
+$route['admin/rooms/edit/(:any)'] = "admin/edit_rooms/$1";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

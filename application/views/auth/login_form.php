@@ -21,12 +21,7 @@ $password = array(
 	'placeholder'	=> 'Enter Password',
 	'required' => 'required'
 );
-$remember = array(
-	'name'	=> 'remember',
-	'id'	=> 'remember',
-	'value'	=> 1,
-	'checked'	=> set_value('remember'),
-);
+
 $captcha = array(
 	'name'	=> 'captcha',
 	'id'	=> 'captcha',
@@ -34,19 +29,9 @@ $captcha = array(
 	'required' => 'required'
 );
 ?>
-	<div class="facebook-signup-link">
-		<form class="form-horizontal">			
-		<div class="control-group">
-			<label class="control-label" for="">Facebook</label>
-			<div class="controls">
-				<a href=""><img src="<?php echo $this->config->item('img_url'); ?>facebook.png" /></a>		
-			</div>
-		</div>	
-		</form>			
-	</div>
-	<span class="or">OR</span>	
+
 <?php
-	$attributes = array('id' => 'myform', 'class' => 'form-horizontal'); 
+	$attributes = array('id' => 'myform', 'class' => 'form-horizontal admin-center'); 
 	echo form_open($this->uri->uri_string(), $attributes); ?>
 
 	<div class="control-group">
@@ -119,53 +104,19 @@ $captcha = array(
 	<?php
 	} ?>
 
-	<div class="control-group">
+	<div class="control-group checkbox-box">
 		<div class="controls">
-			<label class="checkbox">
-			<?php echo form_checkbox($remember); ?><?php echo $this->lang->line('auth_remember_me'); ?>
-			</label>
+			<input id="remember" type="checkbox" value="1" name="remember"></input>
+            <label for="remember"><span></span>Remember me</label>
 		</div>
 	</div>
 
 	<div class="control-group">		
 		<div class="controls login-button-box">
-			<div class="left"><?php echo anchor('/auth/forgot_password/', $this->lang->line('auth_forgot_password'), array('data-toggle' => 'modal', 'data-target' => '#forgot_pass', 'data-dismiss' => 'modal', 'aria-hidden' => 'true')); ?></div>
-			<div class="right"><button class="btn btn-inverse login-button" type="submit"><?php echo $this->lang->line('auth_login'); ?></button></div>	
+			<div class="left"><?php echo anchor('/auth/forgot_password/', $this->lang->line('auth_forgot_password')); ?>
+			<button class="btn btn-success login-button" type="submit"><i class="icon-signin"></i> <?php echo $this->lang->line('auth_login'); ?></button></div>	
 			<div class="clear"></div>
 		</div>
 	</div>
 
-	<div class="signup-link">	
-		<div class="control-group">
-			<label class="control-label"><?php echo $this->lang->line('auth_dont_have_account'); ?></label>
-			<div class="controls">
-				<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', $this->lang->line('auth_register'), array('class' => 'btn btn-inverse', 'role' => 'button', 'data-toggle' => 'modal', 'data-target' => '#signup', 'data-dismiss' => 'modal', 'aria-hidden' => 'true')); ?>			
-			</div>
-		</div>		
-	</div>
-
 <?php echo form_close(); ?>
-
-	<script type="text/javascript">    
-      $(document).ready(function(){
-
-          $('.form-horizontal').submit(function(event) {
-              var $form = $(this);
-              var $target = $($form.attr('data-target'));
-
-              $('#login .modal-body').html('<?php echo $this->config->item("loading_img"); ?>');
-               
-              $.ajax({
-                type: $form.attr('method'),
-                url: $form.attr('action'),
-                data: $form.serialize(),
-                 
-                success: function(data, status) {
-                  $('#login .modal-body').html(data);
-                }
-              });
-               
-              event.preventDefault();
-          });
-      }); 
-      </script>
