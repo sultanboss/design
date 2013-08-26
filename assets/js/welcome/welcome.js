@@ -156,8 +156,8 @@ function select(room, wall, floor)
     $('#' + wall).css('background', '#FEECE2');
     $('#' + floor).css('background', '#FEECE2');
 
-    if($('.preview-image').atr('src') != '')
-    {
+    if($('.preview-image').attr('src') != '')
+    { 
         $('.preview-image').load(function() {
             $('.loading').hide();  
         });
