@@ -156,9 +156,14 @@ function select(room, wall, floor)
     $('#' + wall).css('background', '#FEECE2');
     $('#' + floor).css('background', '#FEECE2');
 
-    $('.preview-image').load(function() {
+    if($('.preview-image').atr('src') != '')
+    {
+        $('.preview-image').load(function() {
+            $('.loading').hide();  
+        });
+    }
+    else
         $('.loading').hide();  
-    });
 }
 
 function numOfVisibleElement(element) 
