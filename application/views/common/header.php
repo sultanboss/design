@@ -46,6 +46,8 @@
 
   <body>
     <div class="loading">
-        <img class="image-loading" src="<?php echo $this->config->item('img_url'); ?>image.gif">
+        <div class="progress progress-striped progress-success active">
+            <div class="bar" style="width: 100%;">LOADING...</div>
+        </div>
     </div>
          

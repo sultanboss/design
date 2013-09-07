@@ -135,7 +135,6 @@ $(window).load(function() {
             $('.nav-wall ul li.' + room).show();
     });
 
-
 });
 
 function url_exists(url)
