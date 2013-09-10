@@ -33,7 +33,7 @@
 	);	
 
 	$tiles_type_value = 'Floors';
-	$tiles_size_value = '2x2';
+	$tiles_size_value = 'Ceramics 30cm x 30cm';
 	$tiles_code_value = set_value('tiles_type');
 
 	if(set_value('tiles_type') != '')
@@ -70,8 +70,11 @@
                 <button class="btn btn-tiles-size" data-toggle="dropdown"><?php echo $tiles_size_value;?></button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-tiles-size">
-                  <li><a href="#">2x2</a></li>
-                  <li><a href="#">4x4</a></li>
+                  <li><a href="#">Ceramics 30cm x 30cm</a></li>
+                  <li><a href="#">Ceramics 40cm x 40cm</a></li>
+                  <li><a href="#">Printed Porcelain 30cm x 30cm</a></li>
+                  <li><a href="#">Printed Porcelain 40cm x 40cm</a></li>
+                  <li><a href="#">Printed Porcelain 60cm x 60cm</a></li>
                 </ul>
               </div>	
 		</div>

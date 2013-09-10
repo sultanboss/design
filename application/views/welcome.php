@@ -31,10 +31,10 @@
                       foreach ($floors_category as $floors_category_item) { 
                       $fall = $fall + $floors_category_item['count(tiles_size)'];
                       ?>
-                      <li><a id="f-<?php echo $floors_category_item['tiles_size']; ?>" href="#"><?php echo $floors_category_item['tiles_type'].' '.$floors_category_item['tiles_size']; ?> <code><?php echo $floors_category_item['count(tiles_size)']; ?></code></a></li>
+                      <li><a id="f-<?php echo strtolower(str_replace(' ', '-', $floors_category_item['tiles_size'])); ?>" href="#"><?php echo $floors_category_item['tiles_size']; ?> <code><?php echo $floors_category_item['count(tiles_size)']; ?></code></a></li>
                       <?php } ?>
                       <li class="divider"></li>
-                      <li><a id="f-all" href="#">All <?php echo $floors_category_item['tiles_type']; ?> <code><?php echo $fall ?></code></a></li>
+                      <li><a id="f-all" href="#">All Floor Tiles <code><?php echo $fall ?></code></a></li>
                     </ul>
                   </div>
                 </li>
@@ -48,10 +48,10 @@
                       foreach ($walls_category as $walls_category_item) { 
                       $wall = $wall + $walls_category_item['count(tiles_size)'];
                       ?>
-                      <li><a id="w-<?php echo $walls_category_item['tiles_size']; ?>" href="#"><?php echo $walls_category_item['tiles_type'].' '.$walls_category_item['tiles_size']; ?> <code><?php echo $walls_category_item['count(tiles_size)']; ?></code></a></li>
+                      <li><a id="w-<?php echo strtolower(str_replace(' ', '-', $walls_category_item['tiles_size'])); ?>" href="#"><?php echo $walls_category_item['tiles_size']; ?> <code><?php echo $walls_category_item['count(tiles_size)']; ?></code></a></li>
                       <?php } ?>
                       <li class="divider"></li>
-                      <li><a id="w-all" href="#">All <?php echo $walls_category_item['tiles_type']; ?> <code><?php echo $wall ?></code></a></li>
+                      <li><a id="w-all" href="#">All Wall Tiles <code><?php echo $wall ?></code></a></li>
                     </ul>
                   </div>
                 </li>
@@ -80,7 +80,7 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$valuex['room'].'-'.substr($valuex['tiles'], 0,1).'-'.$walls_item['tiles_size'].' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-w-'.strtolower(str_replace(' ', '-', $walls_item['tiles_size'])).' ';
                      $i++;
                   };
                 ?>
@@ -107,7 +107,7 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)                
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$valuex['room'].'-'.substr($valuex['tiles'], 0,1).'-'.$floors_item['tiles_size'].' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-f-'.strtolower(str_replace(' ', '-', $floors_item['tiles_size'])).' ';
                      $i++;
                   };
                 ?>

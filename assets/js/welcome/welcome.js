@@ -2,12 +2,12 @@
 $(window).load(function() {
 
     var roomType = 'bed';
-    var room = 'BED3';
+    var room = 'BED24';
     var floor = 0;
     var wall = 0;
 
-    var default_room_img = 'BED3';
-    var default_floor_img = 'BED3';
+    var default_room_img = 'BED24';
+    var default_floor_img = 'BED24';
     var default_wall_img = 'BAT7';
 
     $("input:radio[id=bed]:first").attr('checked', true);
@@ -18,6 +18,8 @@ $(window).load(function() {
     $('.nav-room ul li.bed').show();
     $('.nav-wall ul li.bed').show();
     $('.nav-floor ul li.bed').show();
+
+    $('.nav-floor ul li.' + room).show();
 
     var loading = 'assets/img/image.gif';
     var image = 'uploads/files/' + default_room_img + '.jpg';
