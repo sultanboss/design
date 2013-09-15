@@ -206,6 +206,45 @@ input[type="radio"]:checked + label span {
 	margin-bottom: 5px;
 }
 
+/* ============ Share Bar ============ */
+
+.share-bar {
+	padding: 0px 8px;
+	position: absolute; 
+	top: 30%; 
+	right: 400px;
+	border: 1px solid #ccc;
+}
+
+.share-bar > a > i {
+	display: block;
+	padding: 5px;
+	font-size: 20px;
+}
+
+.share-bar > a > i:hover {
+	opacity: 0.8;
+}
+
+.share-bar > a > i.icon-facebook-sign {
+	color: #1258A0;
+}
+
+.share-bar > a > i.icon-twitter-sign {
+	color: #07A0DA;
+}
+
+.share-bar > a > i.icon-google-plus-sign {
+	color: #D6492F
+}
+
+.share-bar > a > i.icon-save {
+	color: #4B8ABE;
+}
+
+.share-bar > a > i.icon-info-sign {
+	color: #9CC63A;
+}
 
 /* ============ Top Bar ============ */
 

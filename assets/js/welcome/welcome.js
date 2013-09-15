@@ -1,23 +1,23 @@
 
 $(window).load(function() {
 
-    var roomType = 'bed';
-    var room = 'BED24';
+    var roomType = 'liv';
+    var room = 'LIV23';
     var floor = 0;
     var wall = 0;
 
-    var default_room_img = 'BED24';
-    var default_floor_img = 'BED24';
+    var default_room_img = 'LIV23';
+    var default_floor_img = 'LIV23';
     var default_wall_img = 'BAT7';
 
-    $("input:radio[id=bed]:first").attr('checked', true);
+    $("input:radio[id=liv]:first").attr('checked', true);
 
     $('.nav-room ul li').hide();
     $('.nav-wall ul li').hide();
     $('.nav-floor ul li').hide();
-    $('.nav-room ul li.bed').show();
-    $('.nav-wall ul li.bed').show();
-    $('.nav-floor ul li.bed').show();
+    $('.nav-room ul li.liv').show();
+    $('.nav-wall ul li.liv').show();
+    $('.nav-floor ul li.liv').show();
 
     $('.nav-floor ul li.' + room).show();
 
@@ -135,6 +135,13 @@ $(window).load(function() {
         }
         else
             $('.nav-wall ul li.' + room).show();
+    });
+
+
+    $('#sfacebook').popover({
+        placement : 'left',
+        html: true,
+        content : '<div class="fb-like" data-href="http://eventconnectbd.com/design/" data-layout="button_count" data-show-faces="false" data-send="false"></div>'
     });
 
 });

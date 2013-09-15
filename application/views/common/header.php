@@ -37,7 +37,7 @@
     <?php echo (isset($css)) ? $css:''; ?>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script>
+    <!-- <script type="text/javascript" src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script> -->
     <script src="<?php echo $this->config->item('js_url'); ?>bootstrap.min.js"></script>
     <script src="<?php echo $this->config->item('js_url'); ?>jqBootstrapValidation.js"></script>
     <?php echo (isset($js)) ? $js:''; ?>

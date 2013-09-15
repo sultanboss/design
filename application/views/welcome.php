@@ -1,3 +1,12 @@
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=448897628488531";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
   <div class="row-fluid">
 
 
@@ -121,6 +130,14 @@
         </div>
       </div>
     </div>
+    </div>
+
+    <div class="share-bar well">      
+      <a id="sfacebook" rel="popover" href="#"><i class="icon-facebook-sign"></i></a>
+      <a id="stwitter" rel="popover" href="#"><i class="icon-twitter-sign"></i></a>
+      <a id="sgoogle" rel="popover" href="#"><i class="icon-google-plus-sign"></i></a>
+      <a id="ssave" rel="popover" href="#"><i class="icon-save"></i></a>
+      <a id="sinfo" rel="popover" href="#"><i class="icon-info-sign"></i></a>
     </div>
 
     <div class="room-bar span8">
