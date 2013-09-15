@@ -130,7 +130,7 @@
               <ul class="nav">
                 <?php foreach ($rooms as $rooms_item) { ?>
                 <li class="<?php echo strtolower(substr($rooms_item['room_code'], 0, 3));?>" id="<?php echo $rooms_item['room_code'];?>x">
-                  <img class="room-thumb img-polaroid" id="<?php echo $rooms_item['room_code'];?>" src="<?php echo $this->config->item('upload_url').'rooms_thumb/'; ?><?php echo $rooms_item['room_code'];?>.Jpg">
+                  <img class="room-thumb img-polaroid" id="<?php echo $rooms_item['room_code'];?>" src="<?php echo $this->config->item('upload_url').'rooms_thumb/'; ?><?php echo $rooms_item['room_code'];?>.jpg">
                   <div class="room-serial"><?php echo $rooms_item['room_code'];?></div>
                 </li>
                 <?php } ?>

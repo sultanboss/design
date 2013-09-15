@@ -22,7 +22,7 @@ $(window).load(function() {
     $('.nav-floor ul li.' + room).show();
 
     var loading = 'assets/img/image.gif';
-    var image = 'uploads/files/' + default_room_img + '.Jpg';
+    var image = 'uploads/files/' + default_room_img + '.jpg';
 
     $('.preview-image').attr('src', image);
     $('.loading').hide();
@@ -33,12 +33,12 @@ $(window).load(function() {
         {
             $('.loading').show();
             room = $(this).attr('id');
-            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.Jpg';            
+            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';            
             if(!url_exists(img))
             {
                 floor = 0;
                 wall = 0;
-                img = 'uploads/files/' + room + '.Jpg';
+                img = 'uploads/files/' + room + '.jpg';
             } 
             
             $('.preview-image').attr('src', img);
@@ -56,12 +56,12 @@ $(window).load(function() {
         {
             $('.loading').show();
             floor = $(this).attr('id');
-            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.Jpg';
+            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             if(!url_exists(img))
             {
                 wall = 0;
                 room = default_floor_img;
-                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.Jpg';
+                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }  
             
             $('.preview-image').attr('src', img);
@@ -74,12 +74,12 @@ $(window).load(function() {
         {
             $('.loading').show();
             wall = $(this).attr('id');
-            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.Jpg';
+            var img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             if(!url_exists(img))
             {
                 floor = 0;
                 room = default_wall_img;
-                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.Jpg';
+                img = 'uploads/files/' + room + '_' + floor + '_' + wall + '.jpg';
             }
             
             $('.preview-image').attr('src', img);
@@ -109,7 +109,7 @@ $(window).load(function() {
         $('.nav-wall ul li.' + room).show();
         $('.nav-floor ul li.' + room).show();   
 
-        img = 'uploads/files/' + room + '.Jpg';
+        img = 'uploads/files/' + room + '.jpg';
         
         $('.preview-image').attr('src', img);
         select(room, wall, floor);
@@ -157,7 +157,7 @@ function select(room, wall, floor)
     $('#' + wall).css('background', '#FEECE2');
     $('#' + floor).css('background', '#FEECE2');
 
-    if($('.preview-image').attr('src') != 'uploads/files/0.Jpg')
+    if($('.preview-image').attr('src') != 'uploads/files/0.jpg')
     { 
         $('.preview-image').load(function() {
             $('.loading').hide();  
