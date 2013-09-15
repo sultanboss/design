@@ -124,11 +124,11 @@
     </div>
 
     <div class="share-bar well">      
-      <a id="sfacebook" rel="popover" href="#"><i class="icon-facebook-sign"></i></a>
-      <a id="stwitter" rel="popover" href="#"><i class="icon-twitter-sign"></i></a>
-      <a id="sgoogle" rel="popover" href="#"><i class="icon-google-plus-sign"></i></a>
-      <a id="ssave" rel="popover" href="#"><i class="icon-save"></i></a>
-      <a id="sinfo" rel="popover" href="#"><i class="icon-info-sign"></i></a>
+      <a class="popover-link" id="sfacebook" rel="popover" href="#"><i class="icon-facebook-sign"></i></a>
+      <a class="popover-link" id="stwitter" rel="popover" href="#"><i class="icon-twitter-sign"></i></a>
+      <a class="popover-link" id="sgoogle" rel="popover" href="#"><i class="icon-google-plus-sign"></i></a>
+      <a class="popover-link" id="ssave" rel="popover" href="#"><i class="icon-save"></i></a>
+      <a class="popover-link" id="sinfo" rel="popover" href="#"><i class="icon-info-sign"></i></a>
     </div>
 
     <div class="room-bar span8">
