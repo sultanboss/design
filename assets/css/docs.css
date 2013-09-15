@@ -36,6 +36,14 @@ code {
 	margin-left: 5px !important;
 }
 
+a {
+   outline: 0;
+}
+
+a:hover, a:active, a:focus {
+  outline: 0;
+}
+
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
@@ -214,6 +222,10 @@ input[type="radio"]:checked + label span {
 	top: 30%; 
 	right: 400px;
 	border: 1px solid #ccc;
+}
+
+.share-bar > a {
+	text-decoration: none;
 }
 
 .share-bar > a > i {
