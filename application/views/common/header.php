@@ -12,13 +12,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mangorate">
 
-    <meta property='og:title' content='Open Mic @ Kozmo' />
+    <meta property='og:title' content='Click & See | Akij Ceramics' />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://eventconnectbd.com/events/view/397" />
-    <meta property="og:image" content="http://eventconnectbd.com/docs/photo/uploads/f241971f6844e1c6b4fde452e202cf09.jpg" />
-    <meta property="og:site_name" content="EventConnectBD" />
-    <meta property="og:description" content="Management and Pandu reserves the right to refuse any performance." />
-    <meta property="fb:admins" content="1521982625,500943320,172009206,503513862,506419912" />
+    <meta property="og:url" content="http://eventconnectbd.com/design/" />
+    <meta property="og:image" content="http://eventconnectbd.com/design/uploads/files/LIV23.jpg" />
+    <meta property="og:site_name" content="Akij Ceramics Ltd." />
+    <meta property="og:description" content="Akij Group is one of the pioneers of the manufacturing industry in Bangladesh. The group started its journey in the later part of 1940s. In the beginning, it started off with jute trading but now has undertaken many new ventures like printing & packaging, textiles, particle boards, cement, match factory & thus created employment for more than 32,000 people in various categories." />
+    <meta property="fb:admins" content="1521982625" />
     <meta property="fb:app_id" content="448897628488531" />
 
     <title><?php echo (isset($title)) ? $title:'No Title'; ?></title>

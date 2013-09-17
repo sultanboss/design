@@ -146,11 +146,11 @@ $(window).load(function() {
     });
 
 
-    $('#sfacebook').popover({
-        placement : 'right',
-        html: true,
-        content : '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Feventconnectbd.com%2Fdesign%2Fuploads%2Ffiles%2F' + room + '_' + floor + '_' + wall + '.jpg&amp;width=80&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=448897628488531" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px; padding-top: 6px;" allowTransparency="true"></iframe>'
-    });
+    // $('#sfacebook').popover({
+    //     placement : 'right',
+    //     html: true,
+    //     content : '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Feventconnectbd.com%2Fdesign%2Fuploads%2Ffiles%2F' + room + '_' + floor + '_' + wall + '.jpg&amp;width=80&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=448897628488531" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px; padding-top: 6px;" allowTransparency="true"></iframe>'
+    // });
 
     $('#stwitter').popover({
         placement : 'right',
