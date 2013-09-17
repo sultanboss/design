@@ -124,9 +124,9 @@
     </div>
 
     <div class="share-bar well">    
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://eventconnectbd.com/design"  onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=300');return false;" class="popover-link" id="sfacebook" rel="popover" href="#"><i class="icon-facebook-sign"></i></a>
-      <a class="popover-link" id="stwitter" rel="popover" href="#"><i class="icon-twitter-sign"></i></a>
-      <a class="popover-link" id="sgoogle" rel="popover" href="#"><i class="icon-google-plus-sign"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://eventconnectbd.com/design" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
+      <a href="https://twitter.com/intent/tweet?url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-twitter-sign"></i></a>
+      <a href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
       <a class="popover-link" id="ssave" rel="popover" href="#"><i class="icon-save"></i></a>
       <a class="popover-link" id="sinfo" rel="popover" href="#"><i class="icon-info-sign"></i></a>
     </div>
