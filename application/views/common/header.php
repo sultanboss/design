@@ -8,9 +8,9 @@
     <meta charset="utf-8">  
     <meta http-equiv="content-type" content="text/html">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Open Mic @ Kozmo, Pandu & Jibon, event, events">  
+    <meta name="keywords" content="Click & See, Akij Ceramics Ltd">  
     <meta name="description" content="">
-    <meta name="author" content="Mangorate">
+    <meta name="author" content="Akij Ceramics">
 
     <meta property='og:title' content='Click & See | Akij Ceramics' />
     <meta property="og:type" content="article" />

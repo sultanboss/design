@@ -146,23 +146,10 @@ $(window).load(function() {
     });
 
 
-    // $('#sfacebook').popover({
-    //     placement : 'right',
-    //     html: true,
-    //     content : '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Feventconnectbd.com%2Fdesign%2Fuploads%2Ffiles%2F' + room + '_' + floor + '_' + wall + '.jpg&amp;width=80&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=448897628488531" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px; padding-top: 6px;" allowTransparency="true"></iframe>'
-    // });
-
-    $('#stwitter').popover({
-        placement : 'right',
-        html: true,
-        content : '<iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html" style=" width:80px; height:21px; padding-top: 6px;"></iframe>'
-    });
-
-
     $('#sgoogle').popover({
         placement : 'right',
         html: true,
-        content : '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;hl=en-US&amp;url=http://eventconnectbd.com/design/uploads/files/' + room + '_' + floor + '_' + wall + '.jpg&amp;parent=http://eventconnectbd.com/design" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:80px; height:21px; padding-top: 6px;"></iframe>'
+        content : ''
     });
 
 
@@ -189,6 +176,7 @@ function select(room, wall, floor)
     if($('.preview-image').attr('src') != 'uploads/files/0.jpg')
     { 
         $('.preview-image').load(function() {
+            $('meta[name=og\\:image]').attr('content', $('.preview-image').attr('src'));
             $('.loading').hide();  
         });
     }
