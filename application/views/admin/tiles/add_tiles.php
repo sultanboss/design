@@ -72,9 +72,11 @@
                 <ul class="dropdown-menu dropdown-tiles-size">
                   <li><a href="#">Ceramics 30cm x 30cm</a></li>
                   <li><a href="#">Ceramics 40cm x 40cm</a></li>
+                  <li><a href="#">Homogeneous</a></li>
                   <li><a href="#">Printed Porcelain 30cm x 30cm</a></li>
                   <li><a href="#">Printed Porcelain 40cm x 40cm</a></li>
                   <li><a href="#">Printed Porcelain 60cm x 60cm</a></li>
+                  <li><a href="#">Wall Design</a></li>
                 </ul>
               </div>	
 		</div>

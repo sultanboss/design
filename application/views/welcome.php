@@ -63,7 +63,7 @@
 
 
     <div class="preview-bar span8">
-        <img class="preview-image" src="" alt="Sorry! There is no room in this category.">
+        <img class="preview-image" src="" alt="Please wait...">
     </div>
 
 
@@ -85,7 +85,7 @@
                   };
                 ?>
                 <li class="<?php echo $cls;?>">
-                  <img class="wall-thumb img-polaroid" id="<?php echo $walls_item['tiles_code'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $walls_item['tiles_code'];?>.jpg">
+                  <img class="wall-thumb img-polaroid" id="<?php echo $walls_item['tiles_code'];?>" data-cat="<?php echo $walls_item['tiles_size'];?>" data-price="<?php echo $walls_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $walls_item['tiles_code'];?>.jpg">
                   <div class="serial"><?php echo $walls_item['tiles_code'];?></div>
                 </li>
                 <?php } ?>
@@ -112,7 +112,7 @@
                   };
                 ?>
                 <li class="<?php echo $cls;?>">
-                  <img class="floor-thumb img-polaroid" id="<?php echo $floors_item['tiles_code'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $floors_item['tiles_code'];?>.jpg">
+                  <img class="floor-thumb img-polaroid" id="<?php echo $floors_item['tiles_code'];?>" data-cat="<?php echo $floors_item['tiles_size'];?>" data-price="<?php echo $floors_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $floors_item['tiles_code'];?>.jpg">
                   <div class="serial"><?php echo $floors_item['tiles_code'];?></div>
                 </li>
                 <?php } ?>
@@ -124,11 +124,28 @@
     </div>
 
     <div class="share-bar well">    
-      <a href="https://www.facebook.com/sharer/sharer.php?u=http://eventconnectbd.com/design" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
-      <a href="https://twitter.com/intent/tweet?url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-twitter-sign"></i></a>
-      <a href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
-      <a class="popover-link" id="ssave" rel="popover" href="#"><i class="icon-save"></i></a>
-      <a class="popover-link" id="sinfo" rel="popover" href="#"><i class="icon-info-sign"></i></a>
+      <a id="fb" data-placement="right" data-toggle="tooltip" data-original-title="Share On Facebook" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/uploads/files/LIV23_312-BE_0.jpg&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh." onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
+      <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Click %26 See %7C Akij Ceramics Ltd.&hashtags=&via=eventconnectbd&url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
+      <a id="gp" data-placement="right" data-toggle="tooltip" data-original-title="Share On Google+" href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
+      <a id="save" data-placement="right" data-toggle="tooltip" data-original-title="Save Image" href="#"><i class="icon-save"></i></a>
+      <a id="info" data-placement="right" data-toggle="tooltip" data-original-title="Toggle Info" href="#" download><i class="icon-info-sign"></i></a>
+    </div>
+
+    <div class="alert tiles-info-bar">
+      <table border="0">
+        <tr>
+          <td><strong>Category:</strong></td>
+          <td id="cat">Ceramics 30cm x 30cm</td>
+        </tr>
+        <tr>
+          <td><strong>Model:</strong></td>
+          <td id="model">302-GR</td>
+        </tr>
+        <tr>
+          <td><strong>Price:</strong></td>
+          <td id="price">1000 Tk.</td>
+        </tr>
+      </table>
     </div>
 
     <div class="room-bar span8">

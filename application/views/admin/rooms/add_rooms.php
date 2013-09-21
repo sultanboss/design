@@ -85,6 +85,8 @@
                   <li><a href="#">Bed Room</a></li>
                   <li><a href="#">Dining Room</a></li>
                   <li><a href="#">Living Room</a></li>
+                  <li><a href="#">Bath Room</a></li>
+                  <li><a href="#">Kitchen Room</a></li>
                 </ul>
               </div>	
 		</div>

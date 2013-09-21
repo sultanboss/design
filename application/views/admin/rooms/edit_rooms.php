@@ -90,6 +90,8 @@
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-rooms-type">
                   <li><a href="#">Bed Room</a></li>
+                  <li><a href="#">Dining Room</a></li>
+                  <li><a href="#">Living Room</a></li>
                   <li><a href="#">Bath Room</a></li>
                   <li><a href="#">Kitchen Room</a></li>
                 </ul>

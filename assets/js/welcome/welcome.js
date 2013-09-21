@@ -1,3 +1,19 @@
+$(document).ready(function() { 
+
+    $('.loading').show();  
+
+    $('img').hide();
+    $('img').each(function(i) {
+        if (this.complete) {
+            $(this).fadeIn(1000);
+        } else {
+            $(this).load(function() {
+                $(this).fadeIn(1000);
+            });
+        }
+    });
+});
+
 
 $(window).load(function() {
 
@@ -25,7 +41,13 @@ $(window).load(function() {
     var image = 'uploads/files/' + default_room_img + '.jpg';
 
     $('.preview-image').attr('src', image);
-    $('.loading').hide();
+    $('.preview-image').load(function() {
+        $('meta[property="og:image"]').attr('content', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
+        $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
+        $('#save').attr('href', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
+        $('.loading').hide();  
+    });
+
     $('#' + default_room_img).css('background', '#FEECE2');
 
     $('.nav-room li img').click(function() {
@@ -65,6 +87,9 @@ $(window).load(function() {
             }  
             
             $('.preview-image').attr('src', img);
+            $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
+            $('.tiles-info-bar #model').html($(this).attr('id'));
+            $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
             select(room, wall, floor);    
         }
     });
@@ -83,6 +108,9 @@ $(window).load(function() {
             }
             
             $('.preview-image').attr('src', img);
+            $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
+            $('.tiles-info-bar #model').html($(this).attr('id'));
+            $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
             select(room, wall, floor);
         }
     });
@@ -146,12 +174,25 @@ $(window).load(function() {
     });
 
 
-    $('#sgoogle').popover({
-        placement : 'right',
-        html: true,
-        content : ''
+    $('#fb').tooltip();
+    $('#tw').tooltip();
+    $('#gp').tooltip();
+    $('#save').tooltip();
+    $('#info').tooltip();
+
+    $("#info").click(function(){
+        $(".alert").toggle();
     });
 
+    $(".alert").alert();
+
+    $(".preview-image").mouseover(function(){
+        $(".alert").css('opacity',0.1);
+    });
+
+    $(".preview-image").mouseout(function(){
+        $(".alert").css('opacity',0.7);
+    });
 
 });
 
@@ -175,13 +216,20 @@ function select(room, wall, floor)
 
     if($('.preview-image').attr('src') != 'uploads/files/0.jpg')
     { 
+        $('.preview-image').attr('alt', 'Please wait...');
         $('.preview-image').load(function() {
             $('meta[property="og:image"]').attr('content', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
+            $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
+            $('#save').attr('href', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));            
             $('.loading').hide();  
         });
     }
     else
+    {
+        $('.preview-image').attr('alt', 'Sorry! There is no room in this category.');
+        $('#save').attr('href', '#' + $('.preview-image').attr('src'));
         $('.loading').hide();  
+    }
 }
 
 function numOfVisibleElement(element) 

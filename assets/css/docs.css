@@ -74,6 +74,10 @@ a:hover {
 	background: #FEECE2;
 }
 
+div[class="tooltip-inner"] {
+    min-width: 100px;
+}
+
 /* ============ Input ============ */
 
 input[type="checkbox"] {
@@ -220,7 +224,7 @@ input[type="radio"]:checked + label span {
 	padding: 0px 8px;
 	position: absolute; 
 	top: 30%; 
-	left: 10px;
+	left: 5px;
 	border: 1px solid #ccc;
 }
 
@@ -257,6 +261,25 @@ input[type="radio"]:checked + label span {
 .share-bar > a > i.icon-info-sign {
 	color: #9CC63A;
 }
+
+/* ============ Tiles Info Bar ============ */
+
+.tiles-info-bar {
+	padding: 5px 10px 5px 0px;
+	position: absolute; 
+	bottom: 140px; 
+	left: 5px;
+	border: 1px solid #ccc;
+	font-size: 12px;
+	opacity: 0.7;
+	color: #000;
+}
+
+.tiles-info-bar td {
+	vertical-align: top;
+	padding: 0px 0px 0px 10px;
+}
+
 
 /* ============ Top Bar ============ */
 
