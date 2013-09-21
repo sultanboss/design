@@ -42,7 +42,7 @@
                   <div class="btn-group top-wall">
                     <button class="btn btn-success btn-wall"><i class="icon-picture"></i> Wall</button>
                     <button class="btn btn-success dropdown-toggle btn-wall-right" data-toggle="dropdown"><i class="icon-caret-down"></i></button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu pull-right">
                       <?php 
                       $wall = 0;
                       foreach ($walls_category as $walls_category_item) { 
