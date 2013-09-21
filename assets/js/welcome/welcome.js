@@ -1,5 +1,13 @@
 $(document).ready(function() { 
 
+    $("body").queryLoader2({
+        barColor: "#92D050",
+        backgroundColor: "#181717",
+        percentage: true,
+        barHeight: 30,
+        completeAnimation: "fade"
+    });
+
     $('.loading').show();  
 
     $('img').hide();
