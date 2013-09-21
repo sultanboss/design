@@ -143,7 +143,7 @@
         </tr>
         <tr>
           <td><strong>Price:</strong></td>
-          <td id="price">1000 Tk.</td>
+          <td id="price">39 Tk.</td>
         </tr>
       </table>
     </div>
