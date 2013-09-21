@@ -173,7 +173,6 @@ $(window).load(function() {
         });
     });
 
-
     $('#fb').tooltip();
     $('#tw').tooltip();
     $('#gp').tooltip();
@@ -221,6 +220,7 @@ function select(room, wall, floor)
             $('meta[property="og:image"]').attr('content', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
             $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
             $('#save').attr('href', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));            
+            $('meta[name=og\\:image]').attr('content', $('.preview-image').attr('src'));
             $('.loading').hide();  
         });
     }
