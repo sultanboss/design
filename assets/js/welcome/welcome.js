@@ -25,6 +25,8 @@ $(document).ready(function() {
 
 $(window).load(function() {
 
+    $('#qLoverlay').hide();
+
     var roomType = 'liv';
     var room = 'LIV23';
     var floor = 0;
