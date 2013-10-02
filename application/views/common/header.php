@@ -33,7 +33,7 @@
     <!--[if IE 7]>
     <link rel="stylesheet" href="<?php echo $this->config->item('css_url'); ?>font-awesome-ie7.min.css">
     <![endif]-->
-    <link href="<?php echo $this->config->item('css_url'); ?>docs.css" rel="stylesheet">
+    <link href="<?php echo $this->config->item('css_url'); ?>docs.css?v1.0" rel="stylesheet">
     <?php echo (isset($css)) ? $css:''; ?>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

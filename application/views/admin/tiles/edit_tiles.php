@@ -11,12 +11,14 @@
 
 	$tiles_code_value = set_value('tiles_code');
 	$tiles_type_value = set_value('tiles_type');
+	$tiles_cat_value = set_value('tiles_cat');
 	$tiles_size_value = set_value('tiles_size');
 	$tiles_price_value = set_value('tiles_price');
 
 	if($row != NULL) {
 		$tiles_code_value = $row->tiles_code;
 		$tiles_type_value =  $row->tiles_type;
+		$tiles_cat_value =  $row->tiles_cat;
 		$tiles_size_value =  $row->tiles_size;
 		$tiles_price_value =  $row->tiles_price;
 	}
@@ -26,6 +28,13 @@
 		'id'	=> 'tiles_type',
 		'value'	=> $tiles_type_value,
 		'placeholder'	=> 'Enter Tiles Type',
+		'required' => 'required'
+	);
+
+	$tiles_cat = array(
+		'name'	=> 'tiles_cat',
+		'id'	=> 'tiles_cat',
+		'value'	=> set_value('tiles_cat'),
 		'required' => 'required'
 	);
 	
@@ -51,6 +60,7 @@
 
 	<input type="hidden" name="tiles_code" id="tiles_code" value="<?php echo $tiles_code_value;?>">
 	<input type="hidden" name="tiles_type" id="tiles_type" value="<?php echo $tiles_type_value;?>">
+	<input type="hidden" name="tiles_cat" id="tiles_cat" value="<?php echo $tiles_cat_value;?>">
 	<input type="hidden" name="tiles_size" id="tiles_size" value="<?php echo $tiles_size_value;?>">
 
 	<div class="control-group">
@@ -68,19 +78,31 @@
 	</div>
 
 	<div class="control-group">
+		<label class="control-label" for="tiles_cat">Tiles Category</label>
+		<div class="controls">
+			<div class="btn-group">
+                <button class="btn btn-tiles-cat" data-toggle="dropdown"><?php echo $tiles_cat_value;?></button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-tiles-cat">
+                  <li><a href="#">Ceramics</a></li>
+                  <li><a href="#">Homogeneous</a></li>
+                  <li><a href="#">Printed Porcelain</a></li>
+                </ul>
+              </div>	
+		</div>
+	</div>
+
+	<div class="control-group">
 		<label class="control-label" for="tiles_size">Tiles Size</label>
 		<div class="controls">
 			<div class="btn-group">
                 <button class="btn btn-tiles-size" data-toggle="dropdown"><?php echo $tiles_size_value;?></button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-tiles-size">
-                  <li><a href="#">Ceramics 30cm x 30cm</a></li>
-                  <li><a href="#">Ceramics 40cm x 40cm</a></li>
-                  <li><a href="#">Homogeneous</a></li>
-                  <li><a href="#">Printed Porcelain 30cm x 30cm</a></li>
-                  <li><a href="#">Printed Porcelain 40cm x 40cm</a></li>
-                  <li><a href="#">Printed Porcelain 60cm x 60cm</a></li>
-                  <li><a href="#">Wall Design</a></li>
+                  <li><a href="#">30cm x 20cm</a></li>
+                  <li><a href="#">30cm x 30cm</a></li>
+                  <li><a href="#">40cm x 40cm</a></li>
+                  <li><a href="#">60cm x 60cm</a></li>
                 </ul>
               </div>	
 		</div>

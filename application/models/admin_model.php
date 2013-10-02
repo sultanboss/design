@@ -104,11 +104,10 @@ class Admin_model extends CI_Model {
 
     function get_tiles_category_count($category)
     {
-        $this->db->select("count(tiles_size), tiles_size, tiles_type");
+        $this->db->select("count(tiles_size), tiles_cat, tiles_size, tiles_type");
         $this->db->where('tiles_type', $category);
         $this->db->from("main_tiles");
-        $this->db->group_by("tiles_size");
-        $this->db->order_by("tiles_size", "ASC");
+        $this->db->group_by("tiles_cat, tiles_size");
         return $this->db->get()->result_array();
     }
 

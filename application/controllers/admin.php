@@ -58,6 +58,7 @@ class Admin extends CI_Controller
 
 		$this->form_validation->set_rules('tiles_code', 'Tiles Code', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_type', 'Tiles Type', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tiles_cat', 'Tiles Category', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_size', 'Tiles Size', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_price', 'Tiles Price', 'trim|required|xss_clean');
 
@@ -69,6 +70,7 @@ class Admin extends CI_Controller
 			$data['data'] = array(
 				'tiles_code'	=> $this->input->post('tiles_code'),
 				'tiles_type'	=> $this->input->post('tiles_type'),
+				'tiles_cat'		=> $this->input->post('tiles_cat'),
 				'tiles_size'	=> $this->input->post('tiles_size'),
 				'tiles_price'	=> $this->input->post('tiles_price')
 			);
@@ -118,6 +120,7 @@ class Admin extends CI_Controller
 
 		$this->form_validation->set_rules('tiles_code', 'Tiles Code', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_type', 'Tiles Type', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('tiles_cat', 'Tiles Category', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_size', 'Tiles Size', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_price', 'Tiles Price', 'trim|required|xss_clean');
 
@@ -129,6 +132,7 @@ class Admin extends CI_Controller
 			$data['data'] = array(
 				'tiles_code'	=> $this->input->post('tiles_code'),
 				'tiles_type'	=> $this->input->post('tiles_type'),
+				'tiles_cat'		=> $this->input->post('tiles_cat'),
 				'tiles_size'	=> $this->input->post('tiles_size'),
 				'tiles_price'	=> $this->input->post('tiles_price')
 			);

@@ -16,8 +16,8 @@ class Welcome extends CI_Controller
 	{
 		$data['js'] = $this->tank_auth->load_js(array('jquery.queryloader2.js'));	
 
-		$data['walls_category'] = $this->admin_model->get_tiles_category_count('Walls');
 		$data['floors_category'] = $this->admin_model->get_tiles_category_count('Floors');
+		$data['walls_category'] = $this->admin_model->get_tiles_category_count('Walls');
 
 		$data['walls'] = $this->admin_model->get_category_tiles('Walls');		
 		$i = 0;

@@ -8,8 +8,6 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 
-application/uploads/files/*
-
 captcha/*.jpg
 
 application/config/database.php

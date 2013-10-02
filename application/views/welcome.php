@@ -9,7 +9,7 @@
                 <li>
                   <a href=""><img class="logo" src="<?php echo $this->config->item('img_url'); ?>logo.png" /></a>
                 </li>
-              </ul>
+              </ul>              
             </div>
         </div>
       </div>
@@ -22,8 +22,11 @@
             <div class="nav-collapse collapse">
               <ul class="nav top-nav">
                 <li>
+                  <button class="btn btn-danger btn-price" data-toggle="modal" data-target="#price_cal"><i class="icon-money"></i> Price Calculator</button>
+                </li>
+                <li>
                   <div class="btn-group top-floor">
-                    <button class="btn btn-info btn-floor"><i class="icon-picture"></i> Floor</button>
+                    <button class="btn btn-info btn-floor"><i class="icon-picture"></i> Floor Tiles</button>
                     <button class="btn btn-info dropdown-toggle btn-floor-right" data-toggle="dropdown"><i class="icon-caret-down"></i></button>
                     <ul class="dropdown-menu">
                       <?php 
@@ -31,7 +34,7 @@
                       foreach ($floors_category as $floors_category_item) { 
                       $fall = $fall + $floors_category_item['count(tiles_size)'];
                       ?>
-                      <li><a id="f-<?php echo strtolower(str_replace(' ', '-', $floors_category_item['tiles_size'])); ?>" href="#"><?php echo $floors_category_item['tiles_size']; ?> <code><?php echo $floors_category_item['count(tiles_size)']; ?></code></a></li>
+                      <li><a id="f-<?php echo strtolower(str_replace(' ', '-', $floors_category_item['tiles_cat']).'-'.str_replace(' ', '-', $floors_category_item['tiles_size'])); ?>" href="#"><?php echo $floors_category_item['tiles_cat'].' '.$floors_category_item['tiles_size']; ?> <code><?php echo $floors_category_item['count(tiles_size)']; ?></code></a></li>
                       <?php } ?>
                       <li class="divider"></li>
                       <li><a id="f-all" href="#">All Floor Tiles <code><?php echo $fall ?></code></a></li>
@@ -40,7 +43,7 @@
                 </li>
                 <li>
                   <div class="btn-group top-wall">
-                    <button class="btn btn-success btn-wall"><i class="icon-picture"></i> Wall</button>
+                    <button class="btn btn-success btn-wall"><i class="icon-picture"></i> Wall Tiles</button>
                     <button class="btn btn-success dropdown-toggle btn-wall-right" data-toggle="dropdown"><i class="icon-caret-down"></i></button>
                     <ul class="dropdown-menu pull-right">
                       <?php 
@@ -48,7 +51,7 @@
                       foreach ($walls_category as $walls_category_item) { 
                       $wall = $wall + $walls_category_item['count(tiles_size)'];
                       ?>
-                      <li><a id="w-<?php echo strtolower(str_replace(' ', '-', $walls_category_item['tiles_size'])); ?>" href="#"><?php echo $walls_category_item['tiles_size']; ?> <code><?php echo $walls_category_item['count(tiles_size)']; ?></code></a></li>
+                      <li><a id="w-<?php echo strtolower(str_replace(' ', '-', $walls_category_item['tiles_cat']).'-'.str_replace(' ', '-', $walls_category_item['tiles_size'])); ?>" href="#"><?php echo $walls_category_item['tiles_cat'].' '.$walls_category_item['tiles_size']; ?> <code><?php echo $walls_category_item['count(tiles_size)']; ?></code></a></li>
                       <?php } ?>
                       <li class="divider"></li>
                       <li><a id="w-all" href="#">All Wall Tiles <code><?php echo $wall ?></code></a></li>
@@ -61,6 +64,81 @@
       </div>
     </div>
 
+    <div id="price_cal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h5 id="myModalLabel">Akij Ceramics Price Calculator</h5>
+      </div>
+      <div class="modal-body">
+        <div class="alert tiles-info-modal">
+          <table border="0" width="100%">
+            <tr>
+              <td width=""><strong>Category :</strong></td>
+              <td width="" id="mcat">Ceramics</td>
+              <td align="right" width="50%" rowspan="4" id="mimg"><img id="mimage" class="img-polaroid" src="uploads/files/tiles_thumb/302-GR.jpg"></td>
+            </tr>
+            <tr>
+              <td><strong>Size :</strong></td>
+              <td id="msize">30cm x 30cm</td>
+            </tr>
+            <tr>
+              <td><strong>Model :</strong></td>
+              <td id="mmodel">302-GR</td>
+            </tr>
+            <tr>
+              <td><strong>Price :</strong></td>
+              <td id="mprice">39 Tk.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="alert alert-info tiles-input-modal">
+          <table border="0" width="100%">
+            <tr>
+              <td><strong>Room Size :</strong></td>
+              <td>
+                <input type="text" value="0" name="user_room_height" id="user_room_height" />
+                <input type="text" value="0" name="user_room_width" id="user_room_width" />
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Size Type :</strong></td>
+              <td>
+                <input type="hidden" name="modal-type" id="modal_type" value="Feets" />
+                <div class="btn-group">
+                <button class="btn btn-modal-type" data-toggle="dropdown">Feets</button>
+                <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-modal-type">
+                  <li><a href="#">Feets</a></li>
+                  <li><a href="#">Centimetres</a></li>
+                  <li><a href="#">Inches</a></li>
+                </ul>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tiles-result-arrow"><i class="icon-resize-horizontal"></i></div>
+        <div class="alert alert-success tiles-price-modal">
+          <table border="0" width="100%">
+            <tr>
+              <td valign="top" width="40%"><strong>Area :</strong></td>
+              <td><span id="total_area">0</span> Square <span id="total_area_type">Feets</span></td>
+            </tr>
+            <tr>
+              <td><strong>Quantity :</strong></td>
+              <td><span id="total_piece">0.00</span> Pcs.</td>
+            </tr>
+            <tr>
+              <td><strong>Net Price :</strong></td>
+              <td ><span id="total_amount">0.00</span> Tk.</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Done</button>
+      </div>
+    </div>
 
     <div class="preview-bar span8">
         <img class="preview-image" src="" alt="Please wait...">
@@ -80,12 +158,12 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$valuex['room'].'-w-'.strtolower(str_replace(' ', '-', $walls_item['tiles_size'])).' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-w-'.strtolower(str_replace(' ', '-', $walls_item['tiles_cat']).'-'.str_replace(' ', '-', $walls_item['tiles_size'])).' ';
                      $i++;
                   };
                 ?>
                 <li class="<?php echo $cls;?>">
-                  <img class="wall-thumb img-polaroid" id="<?php echo $walls_item['tiles_code'];?>" data-cat="<?php echo $walls_item['tiles_size'];?>" data-price="<?php echo $walls_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $walls_item['tiles_code'];?>.jpg">
+                  <img class="wall-thumb img-polaroid" id="<?php echo $walls_item['tiles_code'];?>" data-cat="<?php echo $walls_item['tiles_cat'];?>" data-size="<?php echo $walls_item['tiles_size'];?>" data-price="<?php echo $walls_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $walls_item['tiles_code'];?>.jpg">
                   <div class="serial"><?php echo $walls_item['tiles_code'];?></div>
                 </li>
                 <?php } ?>
@@ -107,12 +185,12 @@
                      $rm = strtolower(substr($valuex['room'], 0, 3));
                      if($i == 0)                
                        $cls.= $rm.' ';                     
-                     $cls.= $valuex['room'].' '.$valuex['room'].'-f-'.strtolower(str_replace(' ', '-', $floors_item['tiles_size'])).' ';
+                     $cls.= $valuex['room'].' '.$valuex['room'].'-f-'.strtolower(str_replace(' ', '-', $floors_item['tiles_cat']).'-'.str_replace(' ', '-', $floors_item['tiles_size'])).' ';
                      $i++;
                   };
                 ?>
                 <li class="<?php echo $cls;?>">
-                  <img class="floor-thumb img-polaroid" id="<?php echo $floors_item['tiles_code'];?>" data-cat="<?php echo $floors_item['tiles_size'];?>" data-price="<?php echo $floors_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $floors_item['tiles_code'];?>.jpg">
+                  <img class="floor-thumb img-polaroid" id="<?php echo $floors_item['tiles_code'];?>" data-cat="<?php echo $floors_item['tiles_cat'];?>" data-size="<?php echo $floors_item['tiles_size'];?>" data-price="<?php echo $floors_item['tiles_price'];?>" src="<?php echo $this->config->item('upload_url').'tiles_thumb/'; ?><?php echo $floors_item['tiles_code'];?>.jpg">
                   <div class="serial"><?php echo $floors_item['tiles_code'];?></div>
                 </li>
                 <?php } ?>
@@ -134,15 +212,19 @@
     <div class="alert tiles-info-bar">
       <table border="0">
         <tr>
-          <td><strong>Category:</strong></td>
-          <td id="cat">Ceramics 30cm x 30cm</td>
+          <td><strong>Category :</strong></td>
+          <td id="cat">Ceramics</td>
         </tr>
         <tr>
-          <td><strong>Model:</strong></td>
+          <td><strong>Size :</strong></td>
+          <td id="size">30cm x 30cm</td>
+        </tr>
+        <tr>
+          <td><strong>Model :</strong></td>
           <td id="model">302-GR</td>
         </tr>
         <tr>
-          <td><strong>Price:</strong></td>
+          <td><strong>Price :</strong></td>
           <td id="price">39 Tk.</td>
         </tr>
       </table>

@@ -36,6 +36,14 @@ $(window).load(function() {
     var default_floor_img = 'LIV23';
     var default_wall_img = 'BAT7';
 
+    var tiles_w = 30;
+    var tiles_h = 30;
+
+    var tcat = 'Ceramics';
+    var tsize = '30cm x 30cm';
+    var tmodel = '302-GR';
+    var tprice = 39;
+
     $("input:radio[id=liv]:first").attr('checked', true);
 
     $('.nav-room ul li').hide();
@@ -98,8 +106,26 @@ $(window).load(function() {
             
             $('.preview-image').attr('src', img);
             $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
+            $('.tiles-info-bar #size').html($(this).attr('data-size'));
             $('.tiles-info-bar #model').html($(this).attr('id'));
             $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
+
+            tcat = $(this).attr('data-cat');
+            tsize = $(this).attr('data-size');
+            tmodel = $(this).attr('id');
+            tprice = $(this).attr('data-price');
+            var numbers = [];
+            $(this).attr('data-size').replace(/(\d[\d\.]*)/g, function( x ) { var n = Number(x); if (x == n) { numbers.push(x); }  })
+
+            tiles_w = numbers[0];
+            tiles_h = numbers[1];
+
+            $('#mcat').text(tcat);
+            $('#msize').text(tsize);
+            $('#mmodel').text(tmodel);
+            $('#mprice').text(tprice + ' Tk.');
+            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
+
             select(room, wall, floor);    
         }
     });
@@ -119,8 +145,26 @@ $(window).load(function() {
             
             $('.preview-image').attr('src', img);
             $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
+            $('.tiles-info-bar #size').html($(this).attr('data-size'));
             $('.tiles-info-bar #model').html($(this).attr('id'));
             $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
+
+            tcat = $(this).attr('data-cat');
+            tsize = $(this).attr('data-size');
+            tmodel = $(this).attr('id');
+            tprice = $(this).attr('data-price' + ' Tk.');
+            var numbers = [];
+            $(this).attr('data-size').replace(/(\d[\d\.]*)/g, function( x ) { var n = Number(x); if (x == n) { numbers.push(x); }  })
+
+            tiles_w = numbers[0];
+            tiles_h = numbers[1];
+
+            $('#mcat').text(tcat);
+            $('#msize').text(tsize);
+            $('#mmodel').text(tmodel);
+            $('#mprice').text(tprice);
+            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
+
             select(room, wall, floor);
         }
     });
@@ -203,6 +247,35 @@ $(window).load(function() {
         $(".alert").css('opacity',0.7);
     });
 
+    $('#mcat').text(tcat);
+    $('#msize').text(tsize);
+    $('#mmodel').text(tmodel);
+    $('#mprice').text(tprice + ' Tk.');
+    $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
+
+    $('.dropdown-modal-type li a').click(function(){
+        $('.btn-modal-type').text($(this).text());
+        $('#modal_type').val($('.btn-modal-type').text());
+        $('.tiles-price-modal #total_area_type').text($(this).text());
+        calculate(tiles_w, tiles_h, tprice);
+    });
+
+    $('#user_room_width, #user_room_height').keyup(function(){
+        calculate(tiles_w, tiles_h, tprice);
+    });
+
+    $('#price_cal').on('hidden', function () {
+        $('#user_room_width').val('0');
+        $('#user_room_height').val('0');
+        $('#modal_type').val('Feets');
+        $('.btn-modal-type').text('Feets');
+        $('.tiles-price-modal #total_area_type').text('Feets');
+        $('.tiles-price-modal #total_area').text('0');
+        $('.tiles-price-modal #total_piece').text('0.00');
+        $('.tiles-price-modal #total_amount').text('0.00');
+    })
+    
+
 });
 
 function url_exists(url)
@@ -249,4 +322,34 @@ function numOfVisibleElement(element)
     }).length;
 
     return numOfVisibleRows;
+}
+
+function calculate(tiles_w, tiles_h, price) 
+{
+        var width = 0;
+        var height = 0;
+        if($('#user_room_width').val() != '')
+            width = $('#user_room_width').val();
+        if($('#user_room_height').val() != '')
+            height = $('#user_room_height').val();
+
+        var tw = width;
+        var th = height;
+        var tarea = width*height;
+        var area = tarea;
+
+        if($('#modal_type').val() == 'Centimetres')
+        {
+            tarea = tarea/929.0303;
+        }
+        if($('#modal_type').val() == 'Inches')
+        {
+            tarea = tarea/144.00;
+        }
+
+        var tpcs = ((tarea)/(tiles_w*tiles_h))*929.0303;
+
+        $('.tiles-price-modal #total_area').text(area);
+        $('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
+        $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((tpcs*price) * 100) / 100).toFixed(2));
 }

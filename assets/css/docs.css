@@ -44,6 +44,14 @@ a:hover, a:active, a:focus {
   outline: 0;
 }
 
+.modal {
+	border-radius: 1px !important;
+}
+
+.modal-body {
+	height: 320px !important;
+}
+
 :focus {outline:none;}
 ::-moz-focus-inner {border:0;}
 
@@ -139,7 +147,7 @@ input[type="radio"]:checked + label span {
 
 .top-right {
 	position: absolute;
-	width: 400px !important;
+	width: 550px !important;
 	right: 0px;
 }
 
@@ -281,6 +289,87 @@ input[type="radio"]:checked + label span {
 }
 
 
+/* ============ Tiles Info Modal ============ */
+
+.tiles-info-modal {
+	border: 1px solid #ccc;
+	font-size: 12px;
+	opacity: 0.7;
+	color: #000;
+	padding: 8px 14px;
+}
+
+.tiles-info-modal td {
+	vertical-align: top;
+	padding: 0px;
+}
+
+.tiles-info-modal td img {
+	max-height: 96px;
+	padding: 4px !important;
+	border-radius: 2px;
+	opacity: 1.0;
+}
+
+.tiles-input-modal {
+	border: 1px solid #ccc;
+	font-size: 12px;
+	opacity: 0.7;
+	color: #000;
+	padding: 8px 14px;
+	float: left;
+	width: 200px;
+	height: 100px;
+}
+
+.tiles-input-modal td input {
+	width: 43px;
+	float: right;
+	margin-top: 10px;
+	border-radius: 1px;
+	text-align: center;
+}
+
+.tiles-input-modal .btn-group {
+	float: right;
+}
+
+.tiles-input-modal .btn-modal-type {
+	width: 89px;
+}
+
+.tiles-input-modal .dropdown-menu {
+	min-width: 112px !important;
+	max-width: 112px !important;
+}
+
+.tiles-price-modal {
+	border: 1px solid #ccc;
+	font-size: 12px;
+	opacity: 0.7;
+	color: #000;
+	padding: 8px 14px;
+	float: right;
+	width: 200px;
+	height: 100px;
+}
+
+.tiles-price-modal td {
+	padding: 4px 0px;
+}
+
+.tiles-result-arrow {
+	float: left;
+	font-size: 35px;
+	color: #CCCCCC;
+	width: 68px;
+	height: 76px;
+	padding-top: 40px;
+	text-align: center;
+}
+
+
+
 /* ============ Top Bar ============ */
 
 .navbar .nav-left {
@@ -294,6 +383,13 @@ input[type="radio"]:checked + label span {
 .logo {
 	height: 30px;
 	margin: -20px 0px;
+}
+
+.btn-price {
+	font-weight: bold;
+	font-size: 13px;
+	border-radius: 1px;
+	margin-right: 17px;
 }
 
 .btn-floor {

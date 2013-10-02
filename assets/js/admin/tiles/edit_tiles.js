@@ -7,9 +7,14 @@
       	});
 
       	$('.dropdown-tiles-size li a').click(function(){
-                  $('.btn-tiles-size').text($(this).text());
-                  $('#tiles_size').val($('.btn-tiles-size').text());
-            });
+            $('.btn-tiles-size').text($(this).text());
+            $('#tiles_size').val($('.btn-tiles-size').text());
+        });
+
+        $('.dropdown-tiles-cat li a').click(function(){
+            $('.btn-tiles-cat').text($(this).text());
+            $('#tiles_cat').val($('.btn-tiles-cat').text());
+        });
 
             $(function () {
                 'use strict';
