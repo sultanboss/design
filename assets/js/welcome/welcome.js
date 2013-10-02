@@ -275,6 +275,7 @@ $(window).load(function() {
         $('.tiles-price-modal #total_amount').text('0.00');
     })
     
+    barActive();
 
 });
 
@@ -288,6 +289,7 @@ function url_exists(url)
 
 function select(room, wall, floor) 
 {
+    barActive();
     $('.nav-room li img').css('background', '#FFFFFF');
     $('.nav-wall li img').css('background', '#FFFFFF');
     $('.nav-floor li img').css('background', '#FFFFFF');
@@ -352,4 +354,45 @@ function calculate(tiles_w, tiles_h, price)
         $('.tiles-price-modal #total_area').text(area);
         $('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
         $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((tpcs*price) * 100) / 100).toFixed(2));
+}
+
+function barActive()
+{
+    var vf = numOfVisibleElement('.nav-floor-content ul li');
+    var vw = numOfVisibleElement('.nav-wall-content ul li');
+
+    if(vw == 0)
+    {
+        $( "#bwall" ).hide( "slide" );
+        $( ".wall-bar" ).hide( "slide" );
+        $( "#bfloor" ).css( {"margin-right":"-10px"} );
+        $( ".floor-bar" ).css( {"right":"10px"} );
+    }
+    else
+    {
+        $( "#bwall" ).show( "slide" );
+        $( ".wall-bar" ).show( "slide" );
+        $( "#bfloor" ).css( {"margin-right":"0px"} );
+        $( ".floor-bar" ).css( {"right":"196px"} );
+    }
+
+    if(vf == 0)
+    {
+        $( "#bfloor" ).hide( "slide" );
+        $( ".floor-bar" ).hide( "slide" );
+    }
+    else
+    {
+        $( "#bfloor" ).show( "slide" );
+        $( ".floor-bar" ).show( "slide" );
+    }
+
+    if((vf != 0) && (vw != 0))
+    {
+        $( ".preview-bar" ).css( {"width":"75%"} );
+    }
+    else
+    {
+        $( ".preview-bar" ).css( {"width":"85%"} );
+    }
 }

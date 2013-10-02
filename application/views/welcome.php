@@ -21,14 +21,14 @@
         <div class="navbar-inner top">
             <div class="nav-collapse collapse">
               <ul class="nav top-nav">
-                <li>
+                <li id="bprice">
                   <button class="btn btn-danger btn-price" data-toggle="modal" data-target="#price_cal"><i class="icon-money"></i> Price Calculator</button>
                 </li>
-                <li>
+                <li id="bfloor">
                   <div class="btn-group top-floor">
                     <button class="btn btn-info btn-floor"><i class="icon-picture"></i> Floor Tiles</button>
                     <button class="btn btn-info dropdown-toggle btn-floor-right" data-toggle="dropdown"><i class="icon-caret-down"></i></button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu pull-right">
                       <?php 
                       $fall = 0;
                       foreach ($floors_category as $floors_category_item) { 
@@ -41,7 +41,7 @@
                     </ul>
                   </div>
                 </li>
-                <li>
+                <li id="bwall">
                   <div class="btn-group top-wall">
                     <button class="btn btn-success btn-wall"><i class="icon-picture"></i> Wall Tiles</button>
                     <button class="btn btn-success dropdown-toggle btn-wall-right" data-toggle="dropdown"><i class="icon-caret-down"></i></button>
@@ -140,7 +140,7 @@
       </div>
     </div>
 
-    <div class="preview-bar span8">
+    <div class="span8 preview-bar">
         <img class="preview-image" src="" alt="Please wait...">
     </div>
 

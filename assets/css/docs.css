@@ -93,13 +93,13 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"] + label {
-    font-size:14px;
+    font-size:12px;
 }
 
 input[type="checkbox"] + label span {
     display:inline-block;
-    width:19px;
-    height:19px;
+    width:15px;
+    height:15px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
     background:url(../img/check_radio_sheet.png) left top no-repeat;
@@ -115,22 +115,23 @@ input[type="radio"] {
 }
 
 input[type="radio"] + label {
-    font-size:14px;
+    font-size:13px;
     color: #000;
+    opacity: 0.9;
 }
 
 input[type="radio"] + label span {
     display:inline-block;
-    width:19px;
-    height:19px;
+    width:15px;
+    height:15px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(../img/check_radio_sheet.png) -38px top no-repeat;
+    background:url(../img/check_radio_sheet.png) -30px top no-repeat;
     cursor:pointer;
 }
 
 input[type="radio"]:checked + label span {
-    background:url(../img/check_radio_sheet.png) -57px top no-repeat;
+    background:url(../img/check_radio_sheet.png) -45px top no-repeat;
 }
 
 
@@ -388,7 +389,7 @@ input[type="radio"]:checked + label span {
 .btn-price {
 	font-weight: bold;
 	font-size: 13px;
-	border-radius: 1px;
+	border-radius: 12px;
 	margin-right: 17px;
 }
 
