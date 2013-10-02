@@ -319,7 +319,7 @@ input[type="radio"]:checked + label span {
 	padding: 8px 14px;
 	float: left;
 	width: 200px;
-	height: 100px;
+	min-height: 100px;
 }
 
 .tiles-input-modal td input {
@@ -351,7 +351,7 @@ input[type="radio"]:checked + label span {
 	padding: 8px 14px;
 	float: right;
 	width: 200px;
-	height: 100px;
+	min-height: 100px;
 }
 
 .tiles-price-modal td {
@@ -517,7 +517,7 @@ input[type="radio"]:checked + label span {
 
 .navbar .wall-thumb {
 	width: 136px;
-	height: 136px;
+	height: 170px;
 	cursor: pointer;
 	margin: 4px 8px;
 }
