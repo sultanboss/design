@@ -152,7 +152,7 @@ $(window).load(function() {
             tcat = $(this).attr('data-cat');
             tsize = $(this).attr('data-size');
             tmodel = $(this).attr('id');
-            tprice = $(this).attr('data-price' + ' Tk.');
+            tprice = $(this).attr('data-price');
             var numbers = [];
             $(this).attr('data-size').replace(/(\d[\d\.]*)/g, function( x ) { var n = Number(x); if (x == n) { numbers.push(x); }  })
 
@@ -162,7 +162,7 @@ $(window).load(function() {
             $('#mcat').text(tcat);
             $('#msize').text(tsize);
             $('#mmodel').text(tmodel);
-            $('#mprice').text(tprice);
+            $('#mprice').text(tprice + ' Tk.');
             $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
 
             select(room, wall, floor);
@@ -344,7 +344,7 @@ function calculate(tiles_w, tiles_h, price)
         }
         if($('#modal_type').val() == 'Inches')
         {
-            tarea = tarea/144.00;
+            tarea = tarea/144;
         }
 
         var tpcs = ((tarea)/(tiles_w*tiles_h))*929.0303;
