@@ -19,10 +19,19 @@
 	<ul class="nav">
 	<?php
 	}
+	$name = $tiles_item['tiles_code'];
+	$ar = explode("_",$name);
+	if(count($ar) > 1)
+	{
+		if($ar[0] == 'T')
+			$name = $ar[1];
+		else
+			$name = $ar[4];
+	}
 	?>	
 		<li>			
 			<a href="<?php echo base_url().'admin/tiles/edit/'.$tiles_item['tiles_id'];?>"><img src="<?php echo $this->config->item('upload_url').'tiles_thumb/'.$tiles_item['tiles_code']; ?>.jpg"></a>
-			<button class="btn btn-mini disabled" type="button"><?php echo $tiles_item['tiles_code']; ?></button>
+			<button class="btn btn-mini disabled" type="button"><?php echo $name; ?></button>
 		</li>
 	<?php } ?>
 	</ul>

@@ -43,6 +43,15 @@ $(window).load(function() {
     var tsize = '30cm x 30cm';
     var tmodel = '302-GR';
     var tprice = 39;
+    var ttophalf = '';
+    var tdecor = '';
+    var tborder = '';
+    var tbothalf = '';
+
+    var big = 0;
+
+    $('#complex-model').hide();
+    $('#info-complex-model').hide();
 
     $("input:radio[id=liv]:first").attr('checked', true);
 
@@ -107,12 +116,42 @@ $(window).load(function() {
             $('.preview-image').attr('src', img);
             $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
             $('.tiles-info-bar #size').html($(this).attr('data-size'));
-            $('.tiles-info-bar #model').html($(this).attr('id'));
+            var ar = $(this).attr('data-model').split("_");
+            if(ar.length > 1)
+            {
+                big = 1;
+                $('.tiles-info-bar #ctophalf').html(ar[1]);
+                $('.tiles-info-bar #cdecor').html(ar[2]);
+                $('.tiles-info-bar #cborder').html(ar[3]);
+                $('.tiles-info-bar #cbothalf').html(ar[4]);
+                $('#info-complex-model').show();
+                $('#info-simple-model').hide();
+                $('#complex-model').show();
+                $('#simple-model').hide();
+                ttophalf = ar[1];
+                tdecor = ar[2];
+                tborder = ar[3];
+                tbothalf = ar[4];                
+                $('#mtophalf').html(ttophalf);
+                $('#mdecor').html(tdecor);
+                $('#mborder').html(tborder);
+                $('#mbothalf').html(tbothalf);
+            }
+            else
+            {
+                big = 0;
+                $('.tiles-info-bar #model').html($(this).attr('data-model'));
+                $('#info-complex-model').hide();
+                $('#info-simple-model').show();
+                $('#complex-model').hide();
+                $('#simple-model').show();
+                tmodel = $(this).attr('data-model');
+                $('#mmodel').html(tmodel);
+            }
             $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
 
             tcat = $(this).attr('data-cat');
             tsize = $(this).attr('data-size');
-            tmodel = $(this).attr('id');
             tprice = $(this).attr('data-price');
             var numbers = [];
             $(this).attr('data-size').replace(/(\d[\d\.]*)/g, function( x ) { var n = Number(x); if (x == n) { numbers.push(x); }  })
@@ -120,11 +159,10 @@ $(window).load(function() {
             tiles_w = numbers[0];
             tiles_h = numbers[1];
 
-            $('#mcat').text(tcat);
-            $('#msize').text(tsize);
-            $('#mmodel').text(tmodel);
-            $('#mprice').text(tprice + ' Tk.');
-            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
+            $('#mcat').html(tcat);
+            $('#msize').html(tsize);
+            $('#mprice').html(tprice + ' Tk.');
+            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + $(this).attr('data-model') + '.jpg');
 
             select(room, wall, floor);    
         }
@@ -146,12 +184,42 @@ $(window).load(function() {
             $('.preview-image').attr('src', img);
             $('.tiles-info-bar #cat').html($(this).attr('data-cat'));
             $('.tiles-info-bar #size').html($(this).attr('data-size'));
-            $('.tiles-info-bar #model').html($(this).attr('id'));
+            var ar = $(this).attr('data-model').split("_");
+            if(ar.length > 1)
+            {
+                big = 1;
+                $('.tiles-info-bar #ctophalf').html(ar[1]);
+                $('.tiles-info-bar #cdecor').html(ar[2]);
+                $('.tiles-info-bar #cborder').html(ar[3]);
+                $('.tiles-info-bar #cbothalf').html(ar[4]);
+                $('#info-complex-model').show();
+                $('#info-simple-model').hide();
+                $('#complex-model').show();
+                $('#simple-model').hide();
+                ttophalf = ar[1];
+                tdecor = ar[2];
+                tborder = ar[3];
+                tbothalf = ar[4];                
+                $('#mtophalf').html(ttophalf);
+                $('#mdecor').html(tdecor);
+                $('#mborder').html(tborder);
+                $('#mbothalf').html(tbothalf);
+            }
+            else
+            {
+                big = 0;
+                $('.tiles-info-bar #model').html($(this).attr('data-model'));
+                $('#info-complex-model').hide();
+                $('#info-simple-model').show();
+                $('#complex-model').hide();
+                $('#simple-model').show();
+                tmodel = $(this).attr('data-model');
+                $('#mmodel').html(tmodel);
+            }
             $('.tiles-info-bar #price').html($(this).attr('data-price') + ' Tk.');
 
             tcat = $(this).attr('data-cat');
             tsize = $(this).attr('data-size');
-            tmodel = $(this).attr('id');
             tprice = $(this).attr('data-price');
             var numbers = [];
             $(this).attr('data-size').replace(/(\d[\d\.]*)/g, function( x ) { var n = Number(x); if (x == n) { numbers.push(x); }  })
@@ -159,11 +227,10 @@ $(window).load(function() {
             tiles_w = numbers[0];
             tiles_h = numbers[1];
 
-            $('#mcat').text(tcat);
-            $('#msize').text(tsize);
-            $('#mmodel').text(tmodel);
-            $('#mprice').text(tprice + ' Tk.');
-            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
+            $('#mcat').html(tcat);
+            $('#msize').html(tsize);
+            $('#mprice').html(tprice + ' Tk.');
+            $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + $(this).attr('data-model') + '.jpg');
 
             select(room, wall, floor);
         }
@@ -199,6 +266,8 @@ $(window).load(function() {
 
 
     $('.top-floor a').click(function() {
+        $('#cat_tick').remove();
+        $(this).append('<i id="cat_tick" class="icon-ok right"></i>');
         if(this.id != 'f-all')
         {
             $('.nav-floor ul li').hide();
@@ -210,13 +279,22 @@ $(window).load(function() {
     });
 
     $('.top-wall a').click(function() {
-        if(this.id != 'w-all')
+        if(this.id.substring(2, 8) == 'border')
         {
-            $('.nav-wall ul li').hide();
-            $('.nav-wall ul li.' + room + '-' + this.id).show();
+            $('#border_tiles').modal('show');
         }
         else
-            $('.nav-wall ul li.' + room).show();
+        {
+            $('#cat_tick').remove();
+            $(this).append('<i id="cat_tick" class="icon-ok right"></i>');
+            if(this.id != 'w-all')
+            {
+                $('.nav-wall ul li').hide();
+                $('.nav-wall ul li.' + room + '-' + this.id).show();
+            }
+            else
+                $('.nav-wall ul li.' + room).show();
+        }
     });
 
     $('body').on('click', function (e) {
@@ -247,10 +325,10 @@ $(window).load(function() {
         $(".alert").css('opacity',0.7);
     });
 
-    $('#mcat').text(tcat);
-    $('#msize').text(tsize);
-    $('#mmodel').text(tmodel);
-    $('#mprice').text(tprice + ' Tk.');
+    $('#mcat').html(tcat);
+    $('#msize').html(tsize);
+    $('#mmodel').html(tmodel);
+    $('#mprice').html(tprice + ' Tk.');
     $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
 
     $('.dropdown-modal-type li a').click(function(){
@@ -276,6 +354,8 @@ $(window).load(function() {
     })
     
     barActive();
+
+    $('.carousel').carousel();
 
 });
 
@@ -367,6 +447,8 @@ function barActive()
         $( ".wall-bar" ).hide( "slide" );
         $( "#bfloor" ).css( {"margin-right":"-10px"} );
         $( ".floor-bar" ).css( {"right":"10px"} );
+        $('#cat_tick').remove();
+        $('#f-all').append('<i id="cat_tick" class="icon-ok right"></i>');
     }
     else
     {
@@ -380,6 +462,8 @@ function barActive()
     {
         $( "#bfloor" ).hide( "slide" );
         $( ".floor-bar" ).hide( "slide" );
+        $('#cat_tick').remove();
+        $('#w-all').append('<i id="cat_tick" class="icon-ok right"></i>');
     }
     else
     {

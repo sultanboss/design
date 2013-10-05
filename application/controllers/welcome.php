@@ -19,6 +19,8 @@ class Welcome extends CI_Controller
 		$data['floors_category'] = $this->admin_model->get_tiles_category_count('Floors');
 		$data['walls_category'] = $this->admin_model->get_tiles_category_count('Walls');
 
+		$data['border_tiles'] = $this->admin_model->get_all_border_tiles();
+
 		$data['walls'] = $this->admin_model->get_category_tiles('Walls');		
 		$i = 0;
 		foreach ($data['walls'] as $key => $value) {
@@ -39,7 +41,8 @@ class Welcome extends CI_Controller
 		$data['rooms_type'] = $this->admin_model->get_all_rooms_type();
 
 		$data['title'] = 'Click & See | Akij Ceramics Ltd';
-		$data['fjs'] = $this->tank_auth->load_js(array('welcome/welcome.js'));		
+		$data['fjs'] = $this->tank_auth->load_js(array('welcome/welcome.js'));	
+
 		$this->load->view('common/header', $data);
 		$this->load->view('welcome', $data);
 		$this->load->view('common/footer', $data);
@@ -52,9 +55,15 @@ class Welcome extends CI_Controller
 
 		$ar = array();
 
+        $arz = explode("_",$tiles);
+        if(count($arz) > 1)
+        {
+        	$tiles = $arz[1].'_'.$arz[2].'_'.$arz[3].'_'.$arz[4];
+        }
+
 		$i = 0;
 		foreach ($files as $key => $value) {
-			if(strpos($value, '_'.$tiles))
+			if((strpos($value, '_'.$tiles)) && (substr($value, 1, 1) != '_'))
 			{
 				if(strpos($value, '_0_'))
 				{

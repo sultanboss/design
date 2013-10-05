@@ -39,7 +39,7 @@
 	);	
 
 	$tiles_type_value = 'Floors';
-	$tiles_size_value = '30cm x 20cm';
+	$tiles_size_value = '20cm x 30cm';
 	$tiles_cat_value = 'Ceramics';
 	$tiles_code_value = set_value('tiles_type');
 
@@ -81,9 +81,13 @@
                 <button class="btn btn-tiles-cat" data-toggle="dropdown"><?php echo $tiles_cat_value;?></button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-tiles-cat">
-                  <li><a href="#">Ceramics</a></li>
-                  <li><a href="#">Homogeneous</a></li>
-                  <li><a href="#">Printed Porcelain</a></li>
+                <?php
+                foreach ($tiles_cat_list as $tiles_cat_item) {
+                ?>
+                  <li><a href="#"><?php echo $tiles_cat_item['tiles_type_cat_name']; ?></a></li>             
+                <?php
+            	}
+                ?>
                 </ul>
               </div>	
 		</div>
@@ -96,10 +100,13 @@
                 <button class="btn btn-tiles-size" data-toggle="dropdown"><?php echo $tiles_size_value;?></button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-tiles-size">
-                  <li><a href="#">30cm x 20cm</a></li>
-                  <li><a href="#">30cm x 30cm</a></li>
-                  <li><a href="#">40cm x 40cm</a></li>
-                  <li><a href="#">60cm x 60cm</a></li>
+                <?php
+                foreach ($tiles_size_list as $tiles_size_item) {
+                ?>
+                  <li><a href="#"><?php echo $tiles_size_item['tiles_type_size_name']; ?></a></li>             
+                <?php
+            	}
+                ?>
                 </ul>
               </div>	
 		</div>

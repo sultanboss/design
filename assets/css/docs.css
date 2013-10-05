@@ -49,7 +49,20 @@ a:hover, a:active, a:focus {
 }
 
 .modal-body {
-	height: 320px !important;
+	height: 400px !important;
+}
+
+.modal-header {
+	padding: 9px 15px 2px 15px !important;
+}
+
+#modal_label {
+	color: #D6492F;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	margin-top: 2px;
+	font-size: 14px;
 }
 
 :focus {outline:none;}
@@ -287,6 +300,7 @@ input[type="radio"]:checked + label span {
 .tiles-info-bar td {
 	vertical-align: top;
 	padding: 0px 0px 0px 10px;
+	line-height: 25px;
 }
 
 
@@ -303,6 +317,7 @@ input[type="radio"]:checked + label span {
 .tiles-info-modal td {
 	vertical-align: top;
 	padding: 0px;
+	line-height: 25px;
 }
 
 .tiles-info-modal td img {
@@ -389,7 +404,7 @@ input[type="radio"]:checked + label span {
 .btn-price {
 	font-weight: bold;
 	font-size: 13px;
-	border-radius: 12px;
+	border-radius: 5px;
 	margin-right: 17px;
 }
 
@@ -427,6 +442,29 @@ input[type="radio"]:checked + label span {
 
 .navbar .top-nav {
 	float: right;
+}
+
+#bfloor li, #bwall li {
+	text-align: left !important;
+	font-size: 12px;
+}
+
+#bfloor dt, #bwall dt {
+	font-weight: normal !important;
+	color: #000;
+	font-size: 13px;
+	padding-left: 15px;
+	padding-bottom: 5px;
+	background: #f8f8f8;
+}
+
+#bfloor a, #bwall a {
+	padding-left: 30px;
+}
+
+#cat_tick {
+	margin-right: -10px;
+	margin-top: -18px;
 }
 
 .btn-group > .btn:first-child {
@@ -518,7 +556,7 @@ input[type="radio"]:checked + label span {
 
 .navbar .wall-thumb {
 	width: 136px;
-	height: 170px;
+	height: 180px;
 	cursor: pointer;
 	margin: 4px 8px;
 }
@@ -752,4 +790,33 @@ input[type="radio"]:checked + label span {
 
 .update-rooms-button {
 	margin-left: 85px;
+}
+
+/* ============ Borders ============ */
+
+.carousel {
+	margin-top: 50px;
+	height: 210px !important;
+}
+
+.carousel-inner {
+	height: 210px;
+}
+
+.carousel-inner>.item>img {
+	margin: 0 auto;
+	border-radius: 2px;
+	padding-bottom: 4px;
+}
+
+.carousel-inner>.item>.item-caption {
+	margin: 10px auto;
+	width: 279px;
+	text-align: center;
+	border: 1px solid rgb(204, 204, 204);
+	font-size: 12px;
+	opacity: 0.7;
+	color: rgb(0, 0, 0);
+	padding: 8px 14px;
+	line-height: 18px;
 }

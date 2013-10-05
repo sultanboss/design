@@ -56,6 +56,9 @@ class Admin extends CI_Controller
 			redirect('/auth/login/');
 		}
 
+		$data['tiles_size_list'] = $this->admin_model->get_all_tiles_size();
+		$data['tiles_cat_list'] = $this->admin_model->get_all_tiles_cat();
+
 		$this->form_validation->set_rules('tiles_code', 'Tiles Code', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_type', 'Tiles Type', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('tiles_cat', 'Tiles Category', 'trim|required|xss_clean');
@@ -109,6 +112,9 @@ class Admin extends CI_Controller
 		}
 
 		$data['row'] = NULL;
+
+		$data['tiles_size_list'] = $this->admin_model->get_all_tiles_size();
+		$data['tiles_cat_list'] = $this->admin_model->get_all_tiles_cat();
 
 		if($this->input->server('REQUEST_METHOD') != 'POST')
 		{

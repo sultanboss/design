@@ -36,6 +36,28 @@ class Admin_model extends CI_Model {
         return $query->result_array();
     }
 
+    function get_all_tiles_size()
+    {
+        $this->db->order_by("tiles_type_size_name", "asc"); 
+        $query = $this->db->get('main_tiles_type_size');
+        return $query->result_array();
+    }
+
+    function get_all_tiles_cat()
+    {
+        $this->db->order_by("tiles_type_cat_name", "asc"); 
+        $query = $this->db->get('main_tiles_type_cat');
+        return $query->result_array();
+    }
+
+    function get_all_border_tiles()
+    {
+        $this->db->where('tiles_cat', 'border');
+        $this->db->order_by("tiles_code", "asc"); 
+        $query = $this->db->get('main_tiles');
+        return $query->result_array();
+    }
+
     function update_tiles($data, $tiles_id)
     {
         $data['created'] = date('Y-m-d H:i:s');
