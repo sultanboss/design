@@ -1,5 +1,8 @@
 $(document).ready(function() { 
 
+    $('#complex-model').hide();
+    $('#info-complex-model').hide();
+    
     $("body").queryLoader2({
         barColor: "#92D050",
         backgroundColor: "#181717",
@@ -49,9 +52,6 @@ $(window).load(function() {
     var tbothalf = '';
 
     var big = 0;
-
-    $('#complex-model').hide();
-    $('#info-complex-model').hide();
 
     $("input:radio[id=liv]:first").attr('checked', true);
 
@@ -335,11 +335,16 @@ $(window).load(function() {
         $('.btn-modal-type').text($(this).text());
         $('#modal_type').val($('.btn-modal-type').text());
         $('.tiles-price-modal #total_area_type').text($(this).text());
-        calculate(tiles_w, tiles_h, tprice);
+        calculate(tiles_w, tiles_h, tprice, big);
     });
 
     $('#user_room_width, #user_room_height').keyup(function(){
-        calculate(tiles_w, tiles_h, tprice);
+        calculate(tiles_w, tiles_h, tprice, big);
+    });
+
+    $('#user_room_width, #user_room_height').click(function(){
+        if($(this).val() == '0')
+            $(this).val('');
     });
 
     $('#price_cal').on('hidden', function () {
@@ -406,7 +411,7 @@ function numOfVisibleElement(element)
     return numOfVisibleRows;
 }
 
-function calculate(tiles_w, tiles_h, price) 
+function calculate(tiles_w, tiles_h, price, big) 
 {
         var width = 0;
         var height = 0;
@@ -420,20 +425,35 @@ function calculate(tiles_w, tiles_h, price)
         var tarea = width*height;
         var area = tarea;
 
+        var barea = width*(8/929.0303);
+
         if($('#modal_type').val() == 'Centimetres')
         {
             tarea = tarea/929.0303;
+            barea = (width*8)/929.0303;
         }
         if($('#modal_type').val() == 'Inches')
         {
             tarea = tarea/144;
+            barea = (width*(8*2.54))/144;
         }
 
         var tpcs = ((tarea)/(tiles_w*tiles_h))*929.0303;
+        var bpcs = ((barea)/(tiles_w*tiles_h))*929.0303;
+
+        var price_res = tpcs*price;
+
+        if(big == 1) 
+        {
+            var btpcs = ((barea)/(25*8))*929.0303;
+            var bprice = btpcs*165;
+            tpcs = ((tpcs-bpcs)-2)+btpcs;
+            price_res = (tpcs*price)+(165*2)+bprice;
+        }
 
         $('.tiles-price-modal #total_area').text(area);
         $('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
-        $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((tpcs*price) * 100) / 100).toFixed(2));
+        $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((price_res) * 100) / 100).toFixed(2));
 }
 
 function barActive()

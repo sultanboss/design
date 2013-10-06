@@ -123,10 +123,10 @@
               <td>
                 <div id="simple-model"><span id="mmodel">302-GR</span></div>
                 <div id="complex-model">
-                  Top Half: <span id="mtophalf">sdf</span><br/>
-                  Decor: <span id="mdecor">df</span><br/>
-                  Border: <span id="mborder">sd</span><br/>
-                  Bottom Half: <span id="mbothalf">sd</span><br/>
+                  Top Half: <span id="mtophalf"></span><br/>
+                  Decor: <span id="mdecor"></span><br/>
+                  Border: <span id="mborder"></span><br/>
+                  Bottom Half: <span id="mbothalf"></span><br/>
                 </div>
               </td>
             </tr>
@@ -325,10 +325,10 @@
           <td>
             <div id="info-simple-model"><span id="model">302-GR</span></div>
             <div id="info-complex-model">
-              Top Half: <span id="ctophalf">sdf</span><br/>
-              Decor: <span id="cdecor">df</span><br/>
-              Border: <span id="cborder">sd</span><br/>
-              Bottom Half: <span id="cbothalf">sd</span><br/>
+              Top Half: <span id="ctophalf"></span><br/>
+              Decor: <span id="cdecor"></span><br/>
+              Border: <span id="cborder"></span><br/>
+              Bottom Half: <span id="cbothalf"></span><br/>
             </div>
           </td>
         </tr>
