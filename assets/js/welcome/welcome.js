@@ -461,14 +461,33 @@ function barActive()
     var vf = numOfVisibleElement('.nav-floor-content ul li');
     var vw = numOfVisibleElement('.nav-wall-content ul li');
 
+    if(vf == 0)
+    {        
+        $( "#bfloor" ).hide( "slide" );
+        $( ".floor-bar" ).hide( "slide" );
+        if(vw == 0)
+        {
+            $('#cat_tick').remove();
+            $('#w-all').append('<i id="cat_tick" class="icon-ok right"></i>');
+        }        
+    }
+    else
+    {
+        $( "#bfloor" ).show( "slide" );
+        $( ".floor-bar" ).show( "slide" );
+    }
+
     if(vw == 0)
     {
         $( "#bwall" ).hide( "slide" );
         $( ".wall-bar" ).hide( "slide" );
         $( "#bfloor" ).css( {"margin-right":"-10px"} );
         $( ".floor-bar" ).css( {"right":"10px"} );
-        $('#cat_tick').remove();
-        $('#f-all').append('<i id="cat_tick" class="icon-ok right"></i>');
+        if(vf == 0)
+        {
+            $('#cat_tick').remove();
+            $('#f-all').append('<i id="cat_tick" class="icon-ok right"></i>');
+        }
     }
     else
     {
@@ -476,19 +495,6 @@ function barActive()
         $( ".wall-bar" ).show( "slide" );
         $( "#bfloor" ).css( {"margin-right":"0px"} );
         $( ".floor-bar" ).css( {"right":"196px"} );
-    }
-
-    if(vf == 0)
-    {
-        $( "#bfloor" ).hide( "slide" );
-        $( ".floor-bar" ).hide( "slide" );
-        $('#cat_tick').remove();
-        $('#w-all').append('<i id="cat_tick" class="icon-ok right"></i>');
-    }
-    else
-    {
-        $( "#bfloor" ).show( "slide" );
-        $( ".floor-bar" ).show( "slide" );
     }
 
     if((vf != 0) && (vw != 0))
