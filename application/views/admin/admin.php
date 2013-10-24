@@ -27,4 +27,6 @@ echo form_open($this->uri->uri_string(), $attributes);
                 <div id="files" class="files"></div>  
         </div>      	 
     </div>
-<?php echo form_close(); ?>
+
+
+

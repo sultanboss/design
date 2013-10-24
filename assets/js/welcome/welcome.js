@@ -425,12 +425,14 @@ function calculate(tiles_w, tiles_h, price, big)
         var tarea = width*height;
         var area = tarea;
 
-        var barea = width*(8/929.0303);
+        var sqft = 900;
+
+        var barea = width*(8/sqft);
 
         if($('#modal_type').val() == 'Centimetres')
         {
-            tarea = tarea/929.0303;
-            barea = (width*8)/929.0303;
+            tarea = tarea/sqft;
+            barea = (width*8)/sqft;
         }
         if($('#modal_type').val() == 'Inches')
         {
@@ -438,14 +440,17 @@ function calculate(tiles_w, tiles_h, price, big)
             barea = (width*(8*2.54))/144;
         }
 
-        var tpcs = ((tarea)/(tiles_w*tiles_h))*929.0303;
-        var bpcs = ((barea)/(tiles_w*tiles_h))*929.0303;
+        var tiles_area = (tiles_w*tiles_h)/sqft;
+
+        var tpcs = (tarea/tiles_area);
+        var bpcs = (barea/tiles_area);
 
         var price_res = tpcs*price;
 
         if(big == 1) 
         {
-            var btpcs = ((barea)/(25*8))*929.0303;
+            var border_area = (25*8)/sqft;
+            var btpcs = (barea*border_area);
             var bprice = btpcs*165;
             tpcs = ((tpcs-bpcs)-2)+btpcs;
             price_res = (tpcs*price)+(165*2)+bprice;
