@@ -1,5 +1,11 @@
   <div class="row-fluid">
 
+  <div class="share-bar-text" data-intro="Use these buttons for share and other functionalities." data-position="right"></div>
+  <div class="price-cal-text" data-intro="Use this button for price calculation." data-position="bottom"></div>
+  <div class="tiles-cat-text" data-intro="Use this button for changing category." data-position="bottom"></div>  
+  <div class="room-change-text" data-intro="Select rooms for different view from here." data-position="right"></div> 
+  <div class="room-cat-text" data-intro="Select room category from here." data-position="left"></div>
+  <div class="tiles-change-text" data-intro="Select tiles to apply on room from here." data-position="left"></div>
 
     <div class="top-left-bar span8">
       <div class="navbar">
@@ -304,15 +310,18 @@
     </div>
     </div>
 
+
     <div class="share-bar well">    
       <a id="fb" data-placement="right" data-toggle="tooltip" data-original-title="Share On Facebook" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/uploads/files/LIV23_312-BE_0.jpg&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh." onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
       <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Click %26 See %7C Akij Ceramics Ltd.&hashtags=&via=AkijCeramicsLtd&url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
       <a id="gp" data-placement="right" data-toggle="tooltip" data-original-title="Share On Google+" href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
       <a id="save" data-placement="right" data-toggle="tooltip" data-original-title="Save Image" href="#"><i class="icon-save"></i></a>
       <a id="info" data-placement="right" data-toggle="tooltip" data-original-title="Toggle Info" href="#" download><i class="icon-info-sign"></i></a>
+      <a id="help" data-placement="right" data-toggle="tooltip" data-original-title="Show Help" href="#"><i class="icon-question-sign"></i></a>
     </div>
 
-    <div class="alert tiles-info-bar">
+
+    <div class="alert tiles-info-bar" data-intro="Here you can find seletcted tiles info." data-position="right">
       <table border="0">
         <tr>
           <td><strong>Category :</strong></td>

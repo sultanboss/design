@@ -30,6 +30,8 @@ $(window).load(function() {
 
     $('#qLoverlay').hide();
 
+    $('body').chardinJs('start');
+
     var roomType = 'liv';
     var room = 'LIV23';
     var floor = 0;
@@ -310,9 +312,14 @@ $(window).load(function() {
     $('#gp').tooltip();
     $('#save').tooltip();
     $('#info').tooltip();
+    $('#help').tooltip();
 
     $("#info").click(function(){
         $(".alert").toggle();
+    });
+
+    $("#help").click(function(){
+        $("body").chardinJs('toggle');
     });
 
     $(".alert").alert();

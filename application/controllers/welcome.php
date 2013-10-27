@@ -14,7 +14,8 @@ class Welcome extends CI_Controller
 
 	function index()
 	{
-		$data['js'] = $this->tank_auth->load_js(array('jquery.queryloader2.js'));	
+		$data['js'] = $this->tank_auth->load_js(array('jquery.queryloader2.js', 'chardinjs.min.js'));
+		$data['css'] = $this->tank_auth->load_css(array('chardinjs.css'));	
 
 		$data['floors_category'] = $this->admin_model->get_tiles_category_count('Floors');
 		$data['walls_category'] = $this->admin_model->get_tiles_category_count('Walls');
@@ -40,7 +41,7 @@ class Welcome extends CI_Controller
 		$data['rooms'] = $this->admin_model->get_all_rooms();
 		$data['rooms_type'] = $this->admin_model->get_all_rooms_type();
 
-		$data['title'] = 'Click & See | Akij Ceramics Ltd';
+		$data['title'] = 'Click & See - Akij Ceramics Ltd';
 		$data['fjs'] = $this->tank_auth->load_js(array('welcome/welcome.js'));	
 
 		$this->load->view('common/header', $data);
