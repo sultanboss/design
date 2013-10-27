@@ -29,6 +29,7 @@ body {
 	color: #777777;
 	margin: 0px !important;
 	background: #DFDFE0;
+	background: url("../img/bg.png") repeat scroll 0% 0% transparent;
 }
 
 code {
