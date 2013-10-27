@@ -331,12 +331,12 @@ $(window).load(function() {
     $('#mprice').html(tprice + ' Tk.');
     $('#mimage').attr('src', 'uploads/files/tiles_thumb/' + tmodel + '.jpg');
 
-    $('.dropdown-modal-type li a').click(function(){
-        $('.btn-modal-type').text($(this).text());
-        $('#modal_type').val($('.btn-modal-type').text());
-        $('.tiles-price-modal #total_area_type').text($(this).text());
-        calculate(tiles_w, tiles_h, tprice, big);
-    });
+    // $('.dropdown-modal-type li a').click(function(){
+    //     $('.btn-modal-type').text($(this).text());
+    //     $('#modal_type').val($('.btn-modal-type').text());
+    //     $('.tiles-price-modal #total_area_type').text($(this).text());
+    //     calculate(tiles_w, tiles_h, tprice, big);
+    // });
 
     $('#user_room_width, #user_room_height').keyup(function(){
         calculate(tiles_w, tiles_h, tprice, big);
@@ -423,42 +423,18 @@ function calculate(tiles_w, tiles_h, price, big)
         var tw = width;
         var th = height;
         var tarea = width*height;
-        var area = tarea;
 
-        var sqft = 900;
+        var price_res = price*tarea;
 
-        var barea = width*(8/sqft);
-
-        if($('#modal_type').val() == 'Centimetres')
-        {
-            tarea = tarea/sqft;
-            barea = (width*8)/sqft;
-        }
-        if($('#modal_type').val() == 'Inches')
-        {
-            tarea = tarea/144;
-            barea = (width*(8*2.54))/144;
-        }
-
-        var tiles_area = (tiles_w*tiles_h)/sqft;
-
-        var tpcs = (tarea/tiles_area);
-        var bpcs = (barea/tiles_area);
-
-        var price_res = tpcs*price;
-
-        if(big == 1) 
-        {
-            var border_area = (25*8)/sqft;
-            var btpcs = (barea*border_area);
-            var bprice = btpcs*165;
-            tpcs = ((tpcs-bpcs)-2)+btpcs;
-            price_res = (tpcs*price)+(165*2)+bprice;
-        }
-
-        $('.tiles-price-modal #total_area').text(area);
-        $('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
+        $('.tiles-price-modal #total_area').text(tarea);
+        //$('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
         $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((price_res) * 100) / 100).toFixed(2));
+
+        if(big == 1) {
+            $('#extra_charge').html('** Extra charges will be applicable if you add decore or border tiles.');
+        }
+        else
+            $('#extra_charge').html('');
 }
 
 function barActive()

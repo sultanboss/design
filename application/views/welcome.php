@@ -137,7 +137,7 @@
           </table>
         </div>
         <div class="alert alert-info tiles-input-modal">
-          <table border="0" width="100%">
+          <table border="0" width="100%" style="margin-top:20px;">
             <tr>
               <td><strong>Room Size :</strong></td>
               <td>
@@ -145,7 +145,7 @@
                 <input type="text" value="0" name="user_room_width" id="user_room_width" />
               </td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td><strong>Size Type :</strong></td>
               <td>
                 <input type="hidden" name="modal-type" id="modal_type" value="Feets" />
@@ -159,26 +159,28 @@
                 </ul>
                 </div>
               </td>
-            </tr>
+            </tr> -->
           </table>
         </div>
         <div class="tiles-result-arrow"><i class="icon-resize-horizontal"></i></div>
         <div class="alert alert-success tiles-price-modal">
-          <table border="0" width="100%">
+          <table border="0" width="100%" style="margin-top:16px;">
             <tr>
               <td valign="top" width="40%"><strong>Area :</strong></td>
               <td><span id="total_area">0</span> Square <span id="total_area_type">Feets</span></td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td><strong>Quantity :</strong></td>
               <td><span id="total_piece">0.00</span> Pcs.</td>
-            </tr>
+            </tr> -->
             <tr>
               <td><strong>Net Price :</strong></td>
               <td ><span id="total_amount">0.00</span> Tk.</td>
             </tr>
           </table>
         </div>
+        <div class="clear"></div>
+        <div id="extra_charge"></div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Done</button>
@@ -304,7 +306,7 @@
 
     <div class="share-bar well">    
       <a id="fb" data-placement="right" data-toggle="tooltip" data-original-title="Share On Facebook" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/uploads/files/LIV23_312-BE_0.jpg&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh." onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
-      <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Click %26 See %7C Akij Ceramics Ltd.&hashtags=&via=eventconnectbd&url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
+      <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Click %26 See %7C Akij Ceramics Ltd.&hashtags=&via=AkijCeramicsLtd&url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
       <a id="gp" data-placement="right" data-toggle="tooltip" data-original-title="Share On Google+" href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
       <a id="save" data-placement="right" data-toggle="tooltip" data-original-title="Save Image" href="#"><i class="icon-save"></i></a>
       <a id="info" data-placement="right" data-toggle="tooltip" data-original-title="Toggle Info" href="#" download><i class="icon-info-sign"></i></a>

@@ -819,3 +819,9 @@ input[type="radio"]:checked + label span {
 	padding: 8px 14px;
 	line-height: 18px;
 }
+
+
+#extra_charge {
+	font-size: 12px;
+	font-style: italic;
+}
