@@ -4,7 +4,7 @@
   <div class="price-cal-text" data-intro="Use this button for price calculation." data-position="bottom"></div>
   <div class="tiles-cat-text" data-intro="Use this button for changing category." data-position="bottom"></div>  
   <div class="room-change-text" data-intro="Select rooms for different view from here." data-position="right"></div> 
-  <div class="room-cat-text" data-intro="Select room category from here." data-position="left"></div>
+  <div class="room-cat-text" data-intro="Select room category from here." data-position="top"></div>
   <div class="tiles-change-text" data-intro="Select tiles to apply on room from here." data-position="left"></div>
 
     <div class="top-left-bar span8">
@@ -26,9 +26,9 @@
       <div class="navbar">
         <div class="navbar-inner top">
             <div class="nav-collapse collapse">
-              <ul class="nav top-nav">
+              <ul class="nav top-nav" id="calPrice">
                 <li id="bprice">
-                  <button class="btn btn-danger btn-price" data-toggle="modal" data-target="#price_cal"><i class="icon-money"></i> Price Calculator</button>
+                  <button class="btn btn-danger btn-price" id="calPrice" data-toggle="modal tooltip" data-target="#price_cal" data-placement="bottom" data-original-title="Content is Calculate Your Tiles Price"><i class="icon-money"></i> Price Calculator</button>
                 </li>
                 <li id="bfloor">
                   <div class="btn-group top-floor">
@@ -184,12 +184,10 @@
               <td ><span id="total_amount">0.00</span> Tk.</td>
             </tr>
           </table>
-        </div>
-        <div class="clear"></div>
-        <div id="extra_charge"></div>
+        </div>       
       </div>
       <div class="modal-footer">
-        <button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Done</button>
+        <div id="extra_charge">** Extra charges will be applicable if you add decore or border tiles.</div><button class="btn btn-success" data-dismiss="modal" aria-hidden="true">Done</button>
       </div>
     </div>
 

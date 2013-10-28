@@ -23,6 +23,25 @@ $(document).ready(function() {
             });
         }
     });
+
+    $( '[data-toggle~="tooltip"]' ).tooltip({
+       container: 'body'
+    });
+
+    $(document).on('click.modal.data-api', '[data-toggle!="modal"][data-toggle~="modal"]', function (e) {
+        var $this = $(this)
+            , href = $this.attr('href')
+            , $target = $($this.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))) //strip for ie7
+            , option = $target.data('modal') ? 'toggle' : $.extend({ remote:!/#/.test(href) && href }, $target.data(), $this.data());
+
+        e.preventDefault();
+
+        $target
+            .modal(option)
+            .one('hide', function () {
+                $this.focus()
+        });
+    });
 });
 
 
@@ -31,6 +50,8 @@ $(window).load(function() {
     $('#qLoverlay').hide();
 
     $('body').chardinJs('start');
+
+    $('.chardinjs-overlay').html('Click to Start');
 
     var roomType = 'liv';
     var room = 'LIV23';
@@ -307,6 +328,7 @@ $(window).load(function() {
         });
     });
 
+    $('#calPrice').tooltip();
     $('#fb').tooltip();
     $('#tw').tooltip();
     $('#gp').tooltip();
@@ -320,6 +342,7 @@ $(window).load(function() {
 
     $("#help").click(function(){
         $("body").chardinJs('toggle');
+        $('.chardinjs-overlay').html('Click to Start');
     });
 
     $(".alert").alert();
@@ -437,11 +460,6 @@ function calculate(tiles_w, tiles_h, price, big)
         //$('.tiles-price-modal #total_piece').text(parseFloat(Math.round(tpcs * 100) / 100).toFixed(2));
         $('.tiles-price-modal #total_amount').text(parseFloat(Math.round((price_res) * 100) / 100).toFixed(2));
 
-        if(big == 1) {
-            $('#extra_charge').html('** Extra charges will be applicable if you add decore or border tiles.');
-        }
-        else
-            $('#extra_charge').html('');
 }
 
 function barActive()
