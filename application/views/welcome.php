@@ -28,7 +28,7 @@
             <div class="nav-collapse collapse">
               <ul class="nav top-nav" id="calPrice">
                 <li id="bprice">
-                  <button class="btn btn-danger btn-price" id="calPrice" data-toggle="modal tooltip" data-target="#price_cal" data-placement="bottom" data-original-title="Content is Calculate Your Tiles Price"><i class="icon-money"></i> Price Calculator</button>
+                  <button class="btn btn-danger btn-price" id="calPrice" data-toggle="modal tooltip" data-target="#price_cal" data-placement="bottom" data-original-title="Calculate Your Tiles Price"><i class="icon-money"></i> Price Calculator</button>
                 </li>
                 <li id="bfloor">
                   <div class="btn-group top-floor">
@@ -310,9 +310,9 @@
 
 
     <div class="share-bar well">    
-      <a id="fb" data-placement="right" data-toggle="tooltip" data-original-title="Share On Facebook" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/uploads/files/LIV23_312-BE_0.jpg&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh." onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
-      <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Click %26 See %7C Akij Ceramics Ltd.&hashtags=&via=AkijCeramicsLtd&url=http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
-      <a id="gp" data-placement="right" data-toggle="tooltip" data-original-title="Share On Google+" href="https://plus.google.com/share?url==http://eventconnectbd.com/design/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
+      <a id="fb" data-placement="right" data-toggle="tooltip" data-original-title="Share On Facebook" href="https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://akijceramics.net/livedemo/&p[title]=Live Demo - Akij Ceramics Ltd.&p[images][0]=http://akijceramics.net/livedemo/uploads/files/LIV23_312-BE_0.jpg&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh." onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-facebook-sign"></i></a>
+      <a id="tw" data-placement="right" data-toggle="tooltip" data-original-title="Share On Twitter"  href="https://twitter.com/intent/tweet?text=Live Demo - Akij Ceramics Ltd.&hashtags=&via=AkijCeramicsLtd&url=http://akijceramics.net/livedemo/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=450');return false;"><i class="icon-twitter-sign"></i></a>
+      <a id="gp" data-placement="right" data-toggle="tooltip" data-original-title="Share On Google+" href="https://plus.google.com/share?url==http://akijceramics.net/livedemo/" onclick="window.open(this.href,'targetWindow','directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=600,height=400');return false;"><i class="icon-google-plus-sign"></i></a>
       <a id="save" data-placement="right" data-toggle="tooltip" data-original-title="Save Image" href="#"><i class="icon-save"></i></a>
       <a id="info" data-placement="right" data-toggle="tooltip" data-original-title="Toggle Info" href="#" download><i class="icon-info-sign"></i></a>
       <a id="help" data-placement="right" data-toggle="tooltip" data-original-title="Show Help" href="#"><i class="icon-question-sign"></i></a>

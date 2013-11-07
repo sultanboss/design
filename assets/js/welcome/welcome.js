@@ -92,9 +92,9 @@ $(window).load(function() {
 
     $('.preview-image').attr('src', image);
     $('.preview-image').load(function() {
-        $('meta[property="og:image"]').attr('content', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
-        $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
-        $('#save').attr('href', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
+        $('meta[property="og:image"]').attr('content', 'http://akijceramics.net/livedemo/' + $('.preview-image').attr('src'));
+        $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://akijceramics.net/livedemo/&p[title]=Live Demo - Akij Ceramics Ltd.&p[images][0]=http://akijceramics.net/livedemo/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
+        $('#save').attr('href', 'http://akijceramics.net/livedemo/' + $('.preview-image').attr('src'));
         $('.loading').hide();  
     });
 
@@ -417,9 +417,9 @@ function select(room, wall, floor)
     { 
         $('.preview-image').attr('alt', 'Please wait...');
         $('.preview-image').load(function() {
-            $('meta[property="og:image"]').attr('content', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));
-            $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://eventconnectbd.com/design/&p[title]=Click %26 See %7C Akij Ceramics Ltd.&p[images][0]=http://eventconnectbd.com/design/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
-            $('#save').attr('href', 'http://eventconnectbd.com/design/' + $('.preview-image').attr('src'));            
+            $('meta[property="og:image"]').attr('content', 'http://akijceramics.net/livedemo/' + $('.preview-image').attr('src'));
+            $('#fb').attr('href', 'https://www.facebook.com/sharer/sharer.php?s=100&p[url]=http://akijceramics.net/livedemo/&p[title]=Live Demo - Akij Ceramics Ltd.&p[images][0]=http://akijceramics.net/livedemo/' + $('.preview-image').attr('src') + '&p[summary]=Akij Group is one of the pioneers of the manufacturing industry in Bangladesh.');
+            $('#save').attr('href', 'http://akijceramics.net/livedemo/' + $('.preview-image').attr('src'));            
             $('meta[name=og\\:image]').attr('content', $('.preview-image').attr('src'));
             $('.loading').hide();  
         });

@@ -8,14 +8,14 @@
     <meta charset="utf-8">  
     <meta http-equiv="content-type" content="text/html">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Click & See, Akij Ceramics Ltd">  
+    <meta name="keywords" content="Live Demo, Akij Ceramics Ltd">  
     <meta name="description" content="">
-    <meta name="author" content="Akij Ceramics">
+    <meta name="author" content="Akij Ceramics Ltd">
 
-    <meta property='og:title' content='Click & See | Akij Ceramics' />
+    <meta property='og:title' content='Live Demo - Akij Ceramics' />
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="http://eventconnectbd.com/design/" />
-    <meta property="og:image" content="http://eventconnectbd.com/design/uploads/files/LIV23.jpg" />
+    <meta property="og:url" content="http://akijceramics.net/livedemo/" />
+    <meta property="og:image" content="http://akijceramics.net/livedemo/uploads/files/LIV23.jpg" />
     <meta property="og:site_name" content="Akij Ceramics Ltd." />
     <meta property="og:description" content="Akij Group is one of the pioneers of the manufacturing industry in Bangladesh. The group started its journey in the later part of 1940s. In the beginning, it started off with jute trading but now has undertaken many new ventures like printing & packaging, textiles, particle boards, cement, match factory & thus created employment for more than 32,000 people in various categories." />
     <meta property="fb:admins" content="1521982625" />

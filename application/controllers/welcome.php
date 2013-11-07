@@ -41,7 +41,7 @@ class Welcome extends CI_Controller
 		$data['rooms'] = $this->admin_model->get_all_rooms();
 		$data['rooms_type'] = $this->admin_model->get_all_rooms_type();
 
-		$data['title'] = 'Click & See - Akij Ceramics Ltd';
+		$data['title'] = 'Live Demo - Akij Ceramics Ltd';
 		$data['fjs'] = $this->tank_auth->load_js(array('welcome/welcome.js'));	
 
 		$this->load->view('common/header', $data);
