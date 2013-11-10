@@ -1,3 +1,7 @@
+  <div class="fb-like">
+      <div class="fb-like" data-href="https://www.facebook.com/AkijCeramics" data-width="The pixel width of the plugin" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="false" data-send="false"></div>
+  </div>
+
   <div class="row-fluid">
 
   <div class="share-bar-text" data-intro="Use these buttons for share and other functionalities." data-position="right"></div>

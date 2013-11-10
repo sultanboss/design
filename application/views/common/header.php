@@ -59,8 +59,4 @@
             <div class="bar" style="width: 100%;">LOADING...</div>
         </div>
     </div>
-
-    <div class="fb-like">
-        <div class="fb-like" data-href="https://www.facebook.com/AkijCeramics" data-width="The pixel width of the plugin" data-colorscheme="light" data-layout="standard" data-action="like" data-show-faces="false" data-send="false"></div>
-    </div>
          
