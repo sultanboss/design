@@ -32,6 +32,7 @@ class Admin_model extends CI_Model {
     function get_all_tiles()
     {
         $this->db->order_by("tiles_type", "asc"); 
+        $this->db->order_by("tiles_code", "asc");
         $query = $this->db->get('main_tiles');
         return $query->result_array();
     }
@@ -113,6 +114,7 @@ class Admin_model extends CI_Model {
     function get_category_tiles($category)
     {
         $this->db->where("tiles_type", $category); 
+        $this->db->order_by("tiles_code", "asc");
         $query = $this->db->get('main_tiles');
         return $query->result_array();
     }
