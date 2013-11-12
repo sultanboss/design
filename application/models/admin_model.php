@@ -113,6 +113,9 @@ class Admin_model extends CI_Model {
 
     function get_category_tiles($category)
     {
+        if($category == 'Walls') {
+            $this->db->where("tiles_cat !=", 'Border'); 
+        }
         $this->db->where("tiles_type", $category); 
         $this->db->order_by("tiles_code", "asc");
         $query = $this->db->get('main_tiles');
