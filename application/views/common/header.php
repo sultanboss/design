@@ -12,6 +12,9 @@
     <meta name="description" content="">
     <meta name="author" content="Akij Ceramics Ltd">
 
+    <meta name="msvalidate.01" content="8C551106AE0968E2D815A64F3B1EB2FC" />
+    <meta name="alexaVerifyID" content="nHso9VqYFDM8L0EpCKeYa-CT8q0" />
+
     <meta property='og:title' content='Live Demo - Akij Ceramics' />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://akijceramics.net/livedemo/" />
@@ -22,6 +25,23 @@
     <meta property="fb:app_id" content="448897628488531" />
 
     <title><?php echo (isset($title)) ? $title:'No Title'; ?></title>
+
+    <script type="text/javascript">
+    //<![CDATA[
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-33365592-1']);
+                            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+    //]]>
+    </script>
 
     <link rel="icon" type="image/png" href="<?php echo $this->config->item('img_url'); ?>favicon.ico">
 
